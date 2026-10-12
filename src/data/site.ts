@@ -30,12 +30,27 @@ export type Experience = {
   highlights: string[];
 };
 
+export type BilingualText = {
+  en: string;
+  th: string;
+};
+
+export type WorkApproach = {
+  title: BilingualText;
+  body: BilingualText;
+};
+
+export type ValuePoint = {
+  title: BilingualText;
+  body: BilingualText;
+};
+
 export const site = {
-  name: 'Your Name',
-  role: 'Software Engineer',
+  name: 'Nithisaran Suksom',
+  role: 'AI-Driven Software Developer',
   tagline: 'I build fast, accessible, and delightful web experiences.',
-  location: 'City, Country',
-  email: 'hello@example.com',
+  location: 'Thailand',
+  email: 'nithisaran.suksom@gmail.com',
   resumeUrl: '#',
   intro: [
     "I'm a software engineer who enjoys turning complex problems into clean, human-centered products. I care deeply about performance, accessibility, and the small details that make software feel great to use.",
@@ -45,9 +60,86 @@ export const site = {
     { name: 'GitHub', url: 'https://github.com/yourname', icon: 'github' },
     { name: 'LinkedIn', url: 'https://linkedin.com/in/yourname', icon: 'linkedin' },
     { name: 'X', url: 'https://x.com/yourname', icon: 'x' },
-    { name: 'Email', url: 'mailto:hello@example.com', icon: 'mail' },
+    { name: 'Email', url: 'mailto:nithisaran.suksom@gmail.com', icon: 'mail' },
   ] satisfies Social[],
 } as const;
+
+export const aboutMe = {
+  title: 'About Me',
+  titleTh: 'เกี่ยวกับฉัน',
+  role: 'AI-Driven Software Developer',
+  roleTh: 'นักพัฒนาซอฟต์แวร์ขับเคลื่อนด้วย AI',
+  description:
+    'A modern software developer focused on seamlessly blending Software Engineering with AI Workflows. I believe in leveraging AI to accelerate development (fast iteration) — from problem-solving and system design to code refactoring — to deliver high-quality work and create business value quickly and precisely.',
+  descriptionTh:
+    'นักพัฒนาซอฟต์แวร์ยุคใหม่ที่มุ่งเน้นการผสานพลังระหว่าง Software Engineering และ AI Workflows เข้าด้วยกันอย่างลงตัว เชื่อมั่นในการใช้ประโยชน์จาก AI มาช่วยเร่งความเร็วในการพัฒนา (Fast Iteration) ตั้งแต่การคิดวิธีแก้ปัญหา การออกแบบระบบ ไปจนถึงการ Refactor โค้ด เพื่อส่งมอบงานที่มีคุณภาพและสร้าง Business Value ได้อย่างรวดเร็วแม่นยำ',
+};
+
+export const workApproach: WorkApproach[] = [
+  {
+    title: {
+      en: 'AI-First & Efficiency Mindset',
+      th: 'AI-First & Efficiency Mindset',
+    },
+    body: {
+      en: 'I treat AI as a working partner — using it to handle repetitive tasks (boilerplate) and accelerate solution discovery, so I can focus fully on core logic, architecture design, and the user experience (UX).',
+      th: 'มอง AI เป็น Partner ในการทำงาน โดยใช้ AI ช่วยจัดการงานซ้ำซ้อน (Boilerplate) และเร่งกระบวนการค้นหาโซลูชัน เพื่อให้มีเวลาโฟกัสกับ Core Logic, Architecture design และประสบการณ์ของผู้ใช้ (UX) ได้เต็มที่',
+    },
+  },
+  {
+    title: {
+      en: 'Modern Developer Workflows',
+      th: 'Modern Developer Workflows',
+    },
+    body: {
+      en: 'I weave AI agents and CLI tools into every stage of the development lifecycle to ship features faster while maintaining high code quality standards.',
+      th: 'ประยุกต์ใช้ AI Agent และ CLI Tools เข้ามาสอดแทรกในทุก Lifecycle ของการพัฒนา เพื่อเพิ่ม Speed ในการส่งมอบฟีเจอร์โดยยังคงมาตรฐานความถูกต้องของโค้ด',
+    },
+  },
+  {
+    title: {
+      en: 'Adaptability & Continuous Learning',
+      th: 'Adaptability & Continuous Learning',
+    },
+    body: {
+      en: 'I continuously learn and adapt to new tools, analyzing the pros and cons of each solution to choose the approach that best fits the problem at hand.',
+      th: 'เรียนรู้และปรับตัวเข้ากับเครื่องมือใหม่ๆ อยู่เสมอ พร้อมวิเคราะห์ข้อดี-ข้อเสียของโซลูชันต่างๆ เพื่อเลือกใช้วิธีที่เหมาะสมที่สุดกับโจทย์ของแต่ละโครงการ',
+    },
+  },
+];
+
+export const valuePoints: ValuePoint[] = [
+  {
+    title: {
+      en: 'High Productivity & Speed',
+      th: 'High Productivity & Speed',
+    },
+    body: {
+      en: 'Deliver work faster with AI-assisted workflows.',
+      th: 'ส่งมอบงานได้เร็วยิ่งขึ้นด้วย AI-Assisted Workflows',
+    },
+  },
+  {
+    title: {
+      en: 'Pragmatic Problem Solving',
+      th: 'Pragmatic Problem Solving',
+    },
+    body: {
+      en: 'Focus on solving problems precisely, quickly, and in ways that are easy to build on.',
+      th: 'มุ่งเน้นการแก้ปัญหาที่ตรงจุด รวดเร็ว และต่อยอดได้ง่าย',
+    },
+  },
+  {
+    title: {
+      en: 'Clean & Maintainable Results',
+      th: 'Clean & Maintainable Results',
+    },
+    body: {
+      en: 'Prioritize well-organized, readable work that stays easy to maintain in the long term.',
+      th: 'ให้ความสำคัญกับโครงสร้างงานที่ระเบียบ อ่านง่าย และดูแลต่อได้ในระยะยาว',
+    },
+  },
+];
 
 export const skills: SkillGroup[] = [
   {
