@@ -60,12 +60,10 @@ export const site = {
     en: 'Thailand',
     th: 'ประเทศไทย',
   },
-  email: 'nithisaran@gmail.com',
   socials: [
-    { name: 'GitHub', url: 'https://github.com/yourname', icon: 'github' },
+    { name: 'GitHub', url: 'https://github.com/nithisaran1999', icon: 'github' },
     { name: 'LinkedIn', url: 'https://linkedin.com/in/yourname', icon: 'linkedin' },
     { name: 'X', url: 'https://x.com/yourname', icon: 'x' },
-    { name: 'Email', url: 'mailto:nithisaran@gmail.com', icon: 'mail' },
   ] satisfies Social[],
 } as const;
 

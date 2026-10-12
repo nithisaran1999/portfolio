@@ -70,8 +70,7 @@ export const ui = {
     contact: {
       eyebrow: 'Contact',
       title: "Let's work together",
-      description: "Have a project in mind, a role to fill, or just want to say hi? My inbox is always open.",
-      emailMe: 'Email me',
+      description: 'Want to connect or see what I’m building? Find me online.',
       findMe: 'Find me online',
     },
     footer: {
@@ -141,8 +140,7 @@ export const ui = {
     contact: {
       eyebrow: 'ติดต่อ',
       title: 'มาร่วมงานกัน',
-      description: 'มีโปรเจกต์ในใจ ต้องการคนมาร่วมทีม หรือแค่อยากทักทาย? กล่องข้อความของฉันเปิดรอเสมอ',
-      emailMe: 'อีเมลฉัน',
+      description: 'อยากพูดคุยหรือติดตามผลงานของฉัน? พบฉันได้ทางออนไลน์',
       findMe: 'พบฉันออนไลน์',
     },
     footer: {
