@@ -1,28 +1,36 @@
 ---
 import SectionHeading from './SectionHeading.astro';
 import { skills } from '../data/site';
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
 ---
 
 <section id="skills" class="border-y border-line bg-surface-2/50">
   <div class="mx-auto max-w-6xl px-6 py-24">
     <div class="reveal">
       <SectionHeading
-        eyebrow="Skills"
-        title="Tools & technologies"
-        description="The languages, frameworks, and tools I reach for to ship great software."
+        eyebrow={t.skills.eyebrow}
+        title={t.skills.title}
+        description={t.skills.description}
       />
     </div>
 
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {
         skills.map((group) => (
-          <div class="reveal rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-white/20">
-            <h3 class="font-display text-base font-semibold text-white">{group.category}</h3>
+          <div class="reveal rounded-2xl border border-line bg-surface p-6 transition-all hover:-translate-y-1 hover:border-slate-900/20 dark:hover:border-white/20">
+            <h3 class="font-display text-base font-semibold text-ink">{group.category[lang]}</h3>
             <ul class="mt-4 flex flex-wrap gap-2">
               {
                 group.items.map((item) => (
                   <li
-                    class="rounded-lg bg-white/5 px-3 py-1.5 text-sm text-slate-300 ring-1 ring-white/10"
+                    class="rounded-lg bg-slate-900/5 px-3 py-1.5 text-sm text-ink-2 ring-1 ring-slate-900/10 dark:bg-white/5 dark:ring-white/10"
                   >
                     {item}
                   </li>

@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from './Hero.astro';
+import About from './About.astro';
+import HowIWork from './HowIWork.astro';
+import Value from './Value.astro';
+import Skills from './Skills.astro';
+import Projects from './Projects.astro';
+import Experience from './Experience.astro';
+import Contact from './Contact.astro';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<Layout lang={lang}>
+  <Hero lang={lang} />
+  <About lang={lang} />
+  <HowIWork lang={lang} />
+  <Value lang={lang} />
+  <Skills lang={lang} />
+  <Projects lang={lang} />
+  <Experience lang={lang} />
+  <Contact lang={lang} />
+</Layout>

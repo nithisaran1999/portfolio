@@ -1,5 +1,6 @@
 // ---------------------------------------------------------------------------
 // Portfolio content — edit this file to make the site yours.
+// Every user-facing string is bilingual: `{ en, th }`.
 // ---------------------------------------------------------------------------
 
 export type Social = {
@@ -8,9 +9,14 @@ export type Social = {
   icon: 'github' | 'linkedin' | 'x' | 'mail' | 'website';
 };
 
+export type BilingualText = {
+  en: string;
+  th: string;
+};
+
 export type Project = {
-  title: string;
-  description: string;
+  title: BilingualText;
+  description: BilingualText;
   tech: string[];
   liveUrl?: string;
   sourceUrl?: string;
@@ -18,21 +24,16 @@ export type Project = {
 };
 
 export type SkillGroup = {
-  category: string;
+  category: BilingualText;
   items: string[];
 };
 
 export type Experience = {
-  role: string;
-  company: string;
-  period: string;
-  description: string;
-  highlights: string[];
-};
-
-export type BilingualText = {
-  en: string;
-  th: string;
+  role: BilingualText;
+  company: BilingualText;
+  period: BilingualText;
+  description: BilingualText;
+  highlights: BilingualText[];
 };
 
 export type WorkApproach = {
@@ -47,15 +48,19 @@ export type ValuePoint = {
 
 export const site = {
   name: 'Nithisaran Suksom',
-  role: 'AI-Driven Software Developer',
-  tagline: 'I build fast, accessible, and delightful web experiences.',
-  location: 'Thailand',
+  role: {
+    en: 'AI-Driven Software Developer',
+    th: 'นักพัฒนาซอฟต์แวร์ขับเคลื่อนด้วย AI',
+  },
+  tagline: {
+    en: 'I build fast, accessible, and delightful web experiences.',
+    th: 'ฉันสร้างเว็บที่รวดเร็ว เข้าถึงได้ และน่าใช้งาน',
+  },
+  location: {
+    en: 'Thailand',
+    th: 'ประเทศไทย',
+  },
   email: 'nithisaran.suksom@gmail.com',
-  resumeUrl: '#',
-  intro: [
-    "I'm a software engineer who enjoys turning complex problems into clean, human-centered products. I care deeply about performance, accessibility, and the small details that make software feel great to use.",
-    'Currently I focus on building modern web applications with TypeScript, React, and Astro — from design systems to full-stack features.',
-  ],
   socials: [
     { name: 'GitHub', url: 'https://github.com/yourname', icon: 'github' },
     { name: 'LinkedIn', url: 'https://linkedin.com/in/yourname', icon: 'linkedin' },
@@ -65,21 +70,17 @@ export const site = {
 } as const;
 
 export const aboutMe = {
-  title: 'About Me',
-  titleTh: 'เกี่ยวกับฉัน',
-  role: 'AI-Driven Software Developer',
-  roleTh: 'นักพัฒนาซอฟต์แวร์ขับเคลื่อนด้วย AI',
-  description:
-    'A modern software developer focused on seamlessly blending Software Engineering with AI Workflows. I believe in leveraging AI to accelerate development (fast iteration) — from problem-solving and system design to code refactoring — to deliver high-quality work and create business value quickly and precisely.',
-  descriptionTh:
-    'นักพัฒนาซอฟต์แวร์ยุคใหม่ที่มุ่งเน้นการผสานพลังระหว่าง Software Engineering และ AI Workflows เข้าด้วยกันอย่างลงตัว เชื่อมั่นในการใช้ประโยชน์จาก AI มาช่วยเร่งความเร็วในการพัฒนา (Fast Iteration) ตั้งแต่การคิดวิธีแก้ปัญหา การออกแบบระบบ ไปจนถึงการ Refactor โค้ด เพื่อส่งมอบงานที่มีคุณภาพและสร้าง Business Value ได้อย่างรวดเร็วแม่นยำ',
+  description: {
+    en: 'A modern software developer focused on seamlessly blending Software Engineering with AI Workflows. I believe in leveraging AI to accelerate development (fast iteration) — from problem-solving and system design to code refactoring — to deliver high-quality work and create business value quickly and precisely.',
+    th: 'นักพัฒนาซอฟต์แวร์ยุคใหม่ที่มุ่งเน้นการผสานพลังระหว่าง Software Engineering และ AI Workflows เข้าด้วยกันอย่างลงตัว เชื่อมั่นในการใช้ประโยชน์จาก AI มาช่วยเร่งความเร็วในการพัฒนา (Fast Iteration) ตั้งแต่การคิดวิธีแก้ปัญหา การออกแบบระบบ ไปจนถึงการ Refactor โค้ด เพื่อส่งมอบงานที่มีคุณภาพและสร้าง Business Value ได้อย่างรวดเร็วแม่นยำ',
+  },
 };
 
 export const workApproach: WorkApproach[] = [
   {
     title: {
       en: 'AI-First & Efficiency Mindset',
-      th: 'AI-First & Efficiency Mindset',
+      th: 'แนวคิด AI-First และประสิทธิภาพ',
     },
     body: {
       en: 'I treat AI as a working partner — using it to handle repetitive tasks (boilerplate) and accelerate solution discovery, so I can focus fully on core logic, architecture design, and the user experience (UX).',
@@ -89,7 +90,7 @@ export const workApproach: WorkApproach[] = [
   {
     title: {
       en: 'Modern Developer Workflows',
-      th: 'Modern Developer Workflows',
+      th: 'เวิร์กโฟลว์นักพัฒนาสมัยใหม่',
     },
     body: {
       en: 'I weave AI agents and CLI tools into every stage of the development lifecycle to ship features faster while maintaining high code quality standards.',
@@ -99,7 +100,7 @@ export const workApproach: WorkApproach[] = [
   {
     title: {
       en: 'Adaptability & Continuous Learning',
-      th: 'Adaptability & Continuous Learning',
+      th: 'ความยืดหยุ่นและการเรียนรู้ต่อเนื่อง',
     },
     body: {
       en: 'I continuously learn and adapt to new tools, analyzing the pros and cons of each solution to choose the approach that best fits the problem at hand.',
@@ -112,7 +113,7 @@ export const valuePoints: ValuePoint[] = [
   {
     title: {
       en: 'High Productivity & Speed',
-      th: 'High Productivity & Speed',
+      th: 'ประสิทธิภาพและความเร็วสูง',
     },
     body: {
       en: 'Deliver work faster with AI-assisted workflows.',
@@ -122,7 +123,7 @@ export const valuePoints: ValuePoint[] = [
   {
     title: {
       en: 'Pragmatic Problem Solving',
-      th: 'Pragmatic Problem Solving',
+      th: 'การแก้ปัญหาอย่างตรงจุด',
     },
     body: {
       en: 'Focus on solving problems precisely, quickly, and in ways that are easy to build on.',
@@ -132,7 +133,7 @@ export const valuePoints: ValuePoint[] = [
   {
     title: {
       en: 'Clean & Maintainable Results',
-      th: 'Clean & Maintainable Results',
+      th: 'ผลงานที่สะอาดและดูแลรักษาง่าย',
     },
     body: {
       en: 'Prioritize well-organized, readable work that stays easy to maintain in the long term.',
@@ -143,53 +144,61 @@ export const valuePoints: ValuePoint[] = [
 
 export const skills: SkillGroup[] = [
   {
-    category: 'Languages',
+    category: { en: 'Languages', th: 'ภาษา' },
     items: ['TypeScript', 'JavaScript', 'HTML', 'CSS', 'SQL', 'Go'],
   },
   {
-    category: 'Frontend',
+    category: { en: 'Frontend', th: 'ฟรอนต์เอนด์' },
     items: ['React', 'Astro', 'Next.js', 'Tailwind CSS', 'Vite'],
   },
   {
-    category: 'Backend & Data',
+    category: { en: 'Backend & Data', th: 'แบ็กเอนด์และข้อมูล' },
     items: ['Node.js', 'PostgreSQL', 'Redis', 'REST', 'GraphQL'],
   },
   {
-    category: 'Tools & Practices',
+    category: { en: 'Tools & Practices', th: 'เครื่องมือและแนวปฏิบัติ' },
     items: ['Git', 'Docker', 'CI/CD', 'Testing', 'Accessibility', 'Figma'],
   },
 ];
 
 export const projects: Project[] = [
   {
-    title: 'Project One',
-    description:
-      'A full-stack web application that helps teams plan and track work. Features real-time collaboration, a polished UI, and a fast, type-safe data layer.',
+    title: { en: 'Project One', th: 'โปรเจกต์ 1' },
+    description: {
+      en: 'A full-stack web application that helps teams plan and track work. Features real-time collaboration, a polished UI, and a fast, type-safe data layer.',
+      th: 'เว็บแอปพลิเคชันแบบฟูลสแตกที่ช่วยทีมวางแผนและติดตามงาน มาพร้อมการทำงานร่วมกันแบบเรียลไทม์ UI ที่ประณีต และ data layer ที่รวดเร็วแบบ type-safe',
+    },
     tech: ['TypeScript', 'React', 'Node.js', 'PostgreSQL'],
     liveUrl: '#',
     sourceUrl: 'https://github.com/yourname/project-one',
     featured: true,
   },
   {
-    title: 'Project Two',
-    description:
-      'A headless, content-driven marketing site built with Astro. Ships with zero JavaScript by default and scores 100 on Lighthouse.',
+    title: { en: 'Project Two', th: 'โปรเจกต์ 2' },
+    description: {
+      en: 'A headless, content-driven marketing site built with Astro. Ships with zero JavaScript by default and scores 100 on Lighthouse.',
+      th: 'เว็บไซต์การตลาดแบบ headless ที่ขับเคลื่อนด้วยเนื้อหา สร้างด้วย Astro แทบไม่มี JavaScript โดยค่าเริ่มต้น และได้คะแนน Lighthouse เต็ม 100',
+    },
     tech: ['Astro', 'Tailwind CSS', 'MDX'],
     liveUrl: '#',
     sourceUrl: 'https://github.com/yourname/project-two',
     featured: true,
   },
   {
-    title: 'Project Three',
-    description:
-      'An open-source CLI tool and library that automates repetitive developer workflows, published to npm with full test coverage.',
+    title: { en: 'Project Three', th: 'โปรเจกต์ 3' },
+    description: {
+      en: 'An open-source CLI tool and library that automates repetitive developer workflows, published to npm with full test coverage.',
+      th: 'เครื่องมือ CLI และไลบรารีแบบโอเพนซอร์สที่ช่วยอัตโนมัติเวิร์กโฟลว์ซ้ำซ้อนของนักพัฒนา เผยแพร่บน npm พร้อมชุดทดสอบครบถ้วน',
+    },
     tech: ['TypeScript', 'Node.js', 'Vitest'],
     sourceUrl: 'https://github.com/yourname/project-three',
   },
   {
-    title: 'Project Four',
-    description:
-      'A data dashboard that turns raw metrics into clear, interactive visualizations with an accessible, responsive interface.',
+    title: { en: 'Project Four', th: 'โปรเจกต์ 4' },
+    description: {
+      en: 'A data dashboard that turns raw metrics into clear, interactive visualizations with an accessible, responsive interface.',
+      th: 'แดชบอร์ดข้อมูลที่แปลงเมตริกดิบให้เป็นภาพแสดงผลที่ชัดเจนและโต้ตอบได้ พร้อมอินเทอร์เฟซที่เข้าถึงได้และรองรับทุกขนาดหน้าจอ',
+    },
     tech: ['React', 'D3.js', 'Tailwind CSS'],
     liveUrl: '#',
     sourceUrl: 'https://github.com/yourname/project-four',
@@ -198,38 +207,44 @@ export const projects: Project[] = [
 
 export const experience: Experience[] = [
   {
-    role: 'Senior Software Engineer',
-    company: 'Company Name',
-    period: '2022 — Present',
-    description:
-      'Lead development of customer-facing features and internal tooling, mentoring engineers and driving accessibility and performance initiatives.',
+    role: { en: 'Senior Software Engineer', th: 'วิศวกรซอฟต์แวร์อาวุโส' },
+    company: { en: 'Company Name', th: 'ชื่อบริษัท' },
+    period: { en: '2022 — Present', th: '2022 — ปัจจุบัน' },
+    description: {
+      en: 'Lead development of customer-facing features and internal tooling, mentoring engineers and driving accessibility and performance initiatives.',
+      th: 'นำทีมพัฒนาฟีเจอร์ที่ใช้งานจริงและเครื่องมือภายใน ให้คำปรึกษาวิศวกร และผลักดันโครงการด้านการเข้าถึงและประสิทธิภาพ',
+    },
     highlights: [
-      'Reduced page load times by 40% through performance profiling and code-splitting.',
-      'Built a reusable design system adopted across three product teams.',
-      'Mentored four engineers and ran the frontend guild.',
+      { en: 'Reduced page load times by 40% through performance profiling and code-splitting.', th: 'ลดเวลาโหลดหน้าเว็บลง 40% ด้วยการวิเคราะห์ประสิทธิภาพและการแยกโค้ด' },
+      { en: 'Built a reusable design system adopted across three product teams.', th: 'สร้าง design system ที่นำกลับมาใช้ใหม่ได้และถูกใช้โดยทีมผลิตภัณฑ์ 3 ทีม' },
+      { en: 'Mentored four engineers and ran the frontend guild.', th: 'ให้คำปรึกษาวิศวกร 4 คนและดูแลชุมชนนักพัฒนาฟรอนต์เอนด์' },
     ],
   },
   {
-    role: 'Software Engineer',
-    company: 'Previous Company',
-    period: '2020 — 2022',
-    description:
-      'Shipped full-stack features end to end, collaborating closely with design and product to deliver polished, reliable software.',
+    role: { en: 'Software Engineer', th: 'วิศวกรซอฟต์แวร์' },
+    company: { en: 'Previous Company', th: 'บริษัทก่อนหน้า' },
+    period: { en: '2020 — 2022', th: '2020 — 2022' },
+    description: {
+      en: 'Shipped full-stack features end to end, collaborating closely with design and product to deliver polished, reliable software.',
+      th: 'ส่งมอบฟีเจอร์ฟูลสแตกตั้งแต่ต้นจนจบ ทำงานใกล้ชิดกับทีมออกแบบและผลิตภัณฑ์เพื่อส่งมอบซอฟต์แวร์ที่ประณีตและเชื่อถือได้',
+    },
     highlights: [
-      'Delivered a real-time collaboration feature used by thousands of customers.',
-      'Introduced automated testing that cut regression bugs by 30%.',
-      'Owned the migration to TypeScript across the codebase.',
+      { en: 'Delivered a real-time collaboration feature used by thousands of customers.', th: 'ส่งมอบฟีเจอร์การทำงานร่วมกันแบบเรียลไทม์ที่มีลูกค้าใช้งานนับพันราย' },
+      { en: 'Introduced automated testing that cut regression bugs by 30%.', th: 'นำการทดสอบอัตโนมัติมาใช้ ลดบั๊กแบบ regression ลง 30%' },
+      { en: 'Owned the migration to TypeScript across the codebase.', th: 'รับผิดชอบการย้ายโค้ดเบสทั้งหมดไปใช้ TypeScript' },
     ],
   },
   {
-    role: 'Junior Developer',
-    company: 'First Company',
-    period: '2019 — 2020',
-    description:
-      'Built and maintained marketing sites and web apps while learning modern development practices.',
+    role: { en: 'Junior Developer', th: 'นักพัฒนาจูเนียร์' },
+    company: { en: 'First Company', th: 'บริษัทแรก' },
+    period: { en: '2019 — 2020', th: '2019 — 2020' },
+    description: {
+      en: 'Built and maintained marketing sites and web apps while learning modern development practices.',
+      th: 'สร้างและดูแลเว็บไซต์การตลาดและเว็บแอปพลิเคชัน พร้อมเรียนรู้แนวทางการพัฒนาสมัยใหม่',
+    },
     highlights: [
-      'Rebuilt the company marketing site with a modern stack.',
-      'Collaborated on the core product UI and API integrations.',
+      { en: 'Rebuilt the company marketing site with a modern stack.', th: 'ปรับปรุงเว็บไซต์การตลาดของบริษัทใหม่ด้วยเทคโนโลยีสมัยใหม่' },
+      { en: 'Collaborated on the core product UI and API integrations.', th: 'ร่วมพัฒนาส่วน UI ของผลิตภัณฑ์หลักและการเชื่อมต่อ API' },
     ],
   },
 ];

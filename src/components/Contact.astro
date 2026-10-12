@@ -2,33 +2,41 @@
 import Icon from './Icon.astro';
 import SectionHeading from './SectionHeading.astro';
 import { site } from '../data/site';
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
 ---
 
 <section id="contact" class="mx-auto max-w-6xl px-6 py-24">
   <div class="reveal">
     <SectionHeading
-      eyebrow="Contact"
-      title="Let's work together"
-      description="Have a project in mind, a role to fill, or just want to say hi? My inbox is always open."
+      eyebrow={t.contact.eyebrow}
+      title={t.contact.title}
+      description={t.contact.description}
     />
   </div>
 
   <div class="reveal grid gap-6 md:grid-cols-2">
     <a
       href={`mailto:${site.email}`}
-      class="group flex items-center gap-5 rounded-2xl border border-line bg-surface-2 p-7 transition-all hover:-translate-y-1 hover:border-white/20"
+      class="group flex items-center gap-5 rounded-2xl border border-line bg-surface-2 p-7 transition-all hover:-translate-y-1 hover:border-slate-900/20 dark:hover:border-white/20"
     >
-      <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500/15 text-indigo-400">
+      <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
         <Icon name="mail" class="h-6 w-6" />
       </span>
       <div>
-        <p class="font-display font-semibold text-white">Email me</p>
-        <p class="text-sm text-slate-400">{site.email}</p>
+        <p class="font-display font-semibold text-ink">{t.contact.emailMe}</p>
+        <p class="text-sm text-ink-3">{site.email}</p>
       </div>
     </a>
 
     <div class="rounded-2xl border border-line bg-surface-2 p-7">
-      <p class="font-display font-semibold text-white">Find me online</p>
+      <p class="font-display font-semibold text-ink">{t.contact.findMe}</p>
       <div class="mt-4 flex flex-wrap gap-3">
         {
           site.socials
@@ -38,7 +46,7 @@ import { site } from '../data/site';
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 rounded-xl border border-line bg-white/5 px-4 py-2.5 text-sm font-medium text-slate-200 transition-colors hover:bg-white/10"
+                class="inline-flex items-center gap-2 rounded-xl border border-line bg-slate-900/5 px-4 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:bg-slate-900/10 dark:bg-white/5 dark:hover:bg-white/10"
               >
                 <Icon name={social.icon} class="h-5 w-5" />
                 {social.name}

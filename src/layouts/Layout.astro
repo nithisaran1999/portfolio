@@ -3,20 +3,23 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import { site } from '../data/site';
+import type { Lang } from '../i18n/ui';
 
 interface Props {
+  lang: Lang;
   title?: string;
   description?: string;
 }
 
 const {
-  title = `${site.name} — ${site.role}`,
-  description = `${site.name} is a ${site.role.toLowerCase()} — ${site.tagline}`,
+  lang,
+  title = `${site.name} — ${site.role[lang]}`,
+  description = `${site.name} is a ${site.role[lang].toLowerCase()} — ${site.tagline[lang]}`,
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang === 'th' ? 'th' : 'en'}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -37,15 +40,28 @@ const {
     />
 
     <script is:inline>
-      document.documentElement.classList.add('js');
+      // Apply theme before paint to avoid a flash of the wrong color scheme.
+      (function () {
+        var stored;
+        try {
+          stored = localStorage.getItem('theme');
+        } catch (e) {
+          stored = null;
+        }
+        var prefersDark =
+          window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var dark = stored ? stored === 'dark' : prefersDark;
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.classList.add('js');
+      })();
     </script>
   </head>
-  <body class="min-h-screen bg-surface text-slate-200 antialiased">
-    <Header />
+  <body class="min-h-screen bg-surface text-ink-2 antialiased">
+    <Header lang={lang} />
     <main id="main">
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
 
     <script>
       // Scroll-reveal animations (progressive enhancement).

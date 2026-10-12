@@ -1,22 +1,33 @@
 ---
 import Icon from './Icon.astro';
 import { site } from '../data/site';
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#approach', label: 'How I Work' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#about', label: t.nav.about },
+  { href: '#approach', label: t.nav.how },
+  { href: '#skills', label: t.nav.skills },
+  { href: '#projects', label: t.nav.projects },
+  { href: '#experience', label: t.nav.experience },
+  { href: '#contact', label: t.nav.contact },
 ];
+
+const langActive = 'rounded-md bg-indigo-500/90 px-2.5 py-1 text-xs font-semibold text-white';
+const langInactive = 'rounded-md px-2.5 py-1 text-xs font-medium text-ink-3 transition-colors hover:text-ink';
 ---
 
 <header
   class="fixed inset-x-0 top-0 z-50 border-b border-line bg-surface/80 backdrop-blur-md"
 >
   <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4" aria-label="Main">
-    <a href="#top" class="font-display text-lg font-semibold tracking-tight text-white">
+    <a href="#top" class="font-display text-lg font-semibold tracking-tight text-ink">
       <span class="text-gradient">{site.name.split(' ')[0]}</span><span>.</span>
     </a>
 
@@ -26,33 +37,41 @@ const navLinks = [
           <li>
             <a
               href={link.href}
-              class="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+              class="rounded-lg px-3 py-2 text-sm font-medium text-ink-2 transition-colors hover:bg-slate-900/5 hover:text-ink dark:hover:bg-white/5 dark:hover:text-white"
             >
               {link.label}
             </a>
           </li>
         ))
       }
-      <li class="ml-2">
-        <a
-          href={site.resumeUrl}
-          class="inline-flex items-center gap-2 rounded-lg bg-indigo-500/90 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-indigo-500"
-        >
-          Resume
-          <Icon name="external" class="h-4 w-4" />
-        </a>
-      </li>
     </ul>
 
-    <button
-      type="button"
-      class="inline-flex items-center justify-center rounded-lg p-2 text-slate-200 transition-colors hover:bg-white/5 md:hidden"
-      aria-label="Toggle menu"
-      aria-expanded="false"
-      data-nav-toggle
-    >
-      <Icon name="menu" class="h-6 w-6" />
-    </button>
+    <div class="flex items-center gap-2">
+      <button
+        type="button"
+        data-theme-toggle
+        aria-label={t.theme.toggle}
+        class="inline-flex h-9 w-9 items-center justify-center rounded-lg text-ink-2 transition-colors hover:bg-slate-900/5 hover:text-ink dark:hover:bg-white/5 dark:hover:text-white"
+      >
+        <Icon name="sun" class="hidden h-5 w-5 dark:block" />
+        <Icon name="moon" class="h-5 w-5 dark:hidden" />
+      </button>
+
+      <div class="hidden items-center rounded-lg border border-line p-0.5 md:flex">
+        <a href="/" class={lang === 'en' ? langActive : langInactive} data-locale-link>EN</a>
+        <a href="/th/" class={lang === 'th' ? langActive : langInactive} data-locale-link>ไทย</a>
+      </div>
+
+      <button
+        type="button"
+        class="inline-flex items-center justify-center rounded-lg p-2 text-ink-2 transition-colors hover:bg-slate-900/5 dark:hover:bg-white/5 md:hidden"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        data-nav-toggle
+      >
+        <Icon name="menu" class="h-6 w-6" />
+      </button>
+    </div>
   </nav>
 
   <div class="hidden border-t border-line md:hidden" data-nav-menu>
@@ -62,20 +81,18 @@ const navLinks = [
           <li>
             <a
               href={link.href}
-              class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-white/5"
+              class="block rounded-lg px-3 py-2 text-sm font-medium text-ink-2 transition-colors hover:bg-slate-900/5 dark:hover:bg-white/5"
             >
               {link.label}
             </a>
           </li>
         ))
       }
-      <li>
-        <a
-          href={site.resumeUrl}
-          class="mt-2 block rounded-lg bg-indigo-500/90 px-3 py-2 text-center text-sm font-semibold text-white"
-        >
-          Resume
-        </a>
+      <li class="flex items-center gap-2 border-t border-line pt-4">
+        <div class="flex items-center rounded-lg border border-line p-0.5">
+          <a href="/" class={lang === 'en' ? langActive : langInactive} data-locale-link>EN</a>
+          <a href="/th/" class={lang === 'th' ? langActive : langInactive} data-locale-link>ไทย</a>
+        </div>
       </li>
     </ul>
   </div>
@@ -97,4 +114,21 @@ const navLinks = [
       toggle?.setAttribute('aria-expanded', 'false');
     }),
   );
+
+  // Theme toggle.
+  const themeToggle = document.querySelector('[data-theme-toggle]');
+  themeToggle?.addEventListener('click', () => {
+    const root = document.documentElement;
+    const isDark = root.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+
+  // Preserve the current section anchor when switching language.
+  document.querySelectorAll('[data-locale-link]').forEach((a) => {
+    a.addEventListener('click', () => {
+      if (window.location.hash) {
+        a.setAttribute('href', `${a.getAttribute('href')}${window.location.hash}`);
+      }
+    });
+  });
 </script>

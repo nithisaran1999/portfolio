@@ -1,53 +1,55 @@
 ---
 import SectionHeading from './SectionHeading.astro';
 import { site, aboutMe } from '../data/site';
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
 ---
 
 <section id="about" class="mx-auto max-w-6xl px-6 py-24">
   <div class="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-start">
     <div class="reveal">
       <SectionHeading
-        eyebrow={`${aboutMe.title} · ${aboutMe.titleTh}`}
-        title={aboutMe.role}
+        eyebrow={t.about.eyebrow}
+        title={site.role[lang]}
+        description={aboutMe.description[lang]}
       />
-      <p class="-mt-8 font-display text-lg font-medium text-indigo-300">{aboutMe.roleTh}</p>
-      <p class="mt-6 text-lg leading-relaxed text-slate-400">{aboutMe.description}</p>
-      <p class="mt-4 leading-relaxed text-slate-500">{aboutMe.descriptionTh}</p>
 
       <dl class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div class="rounded-2xl border border-line bg-surface-2 p-5">
-          <dt class="text-sm text-slate-500">Location</dt>
-          <dd class="mt-1 font-medium text-white">{site.location}</dd>
+          <dt class="text-sm text-ink-4">{t.about.location}</dt>
+          <dd class="mt-1 font-medium text-ink">{site.location[lang]}</dd>
         </div>
         <div class="rounded-2xl border border-line bg-surface-2 p-5">
-          <dt class="text-sm text-slate-500">Focus</dt>
-          <dd class="mt-1 font-medium text-white">AI-Driven Development</dd>
+          <dt class="text-sm text-ink-4">{t.about.focus}</dt>
+          <dd class="mt-1 font-medium text-ink">{t.about.focusValue}</dd>
         </div>
         <div class="rounded-2xl border border-line bg-surface-2 p-5">
-          <dt class="text-sm text-slate-500">Experience</dt>
-          <dd class="mt-1 font-medium text-white">5+ years</dd>
+          <dt class="text-sm text-ink-4">{t.about.experience}</dt>
+          <dd class="mt-1 font-medium text-ink">{t.about.experienceValue}</dd>
         </div>
       </dl>
     </div>
 
-    <div class="reveal rounded-3xl border border-line bg-gradient-to-br from-surface-2 to-surface-3 p-8">
-      <h3 class="font-display text-lg font-semibold text-white">What I'm good at</h3>
+    <div class="reveal rounded-3xl border border-line bg-gradient-to-br from-surface-2 to-surface-3 p-8 transition-all hover:-translate-y-1 hover:border-slate-900/20 dark:hover:border-white/20">
+      <h3 class="font-display text-lg font-semibold text-ink">{t.about.whatImGoodAt}</h3>
       <ul class="mt-6 space-y-4">
         {
-          [
-            ['Frontend engineering', 'Building accessible, responsive interfaces with React and Astro.'],
-            ['Backend & APIs', 'Designing reliable APIs and data models with Node.js and SQL.'],
-            ['Performance', 'Making the web fast: code-splitting, caching, and Core Web Vitals.'],
-          ].map(([title, body]) => (
+          t.about.goodAt.map((item) => (
             <li class="flex gap-4">
-              <span class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500/15 text-indigo-400">
+              <span class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true">
                   <path d="M5 13l4 4L19 7" />
                 </svg>
               </span>
               <div>
-                <p class="font-medium text-white">{title}</p>
-                <p class="text-sm text-slate-400">{body}</p>
+                <p class="font-medium text-ink">{item.title}</p>
+                <p class="text-sm text-ink-3">{item.body}</p>
               </div>
             </li>
           ))

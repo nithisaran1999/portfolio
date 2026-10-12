@@ -1,7 +1,7 @@
 ---
 // Minimal inline SVG icon set. Extend as needed.
 interface Props {
-  name: 'github' | 'linkedin' | 'x' | 'mail' | 'external' | 'location' | 'arrow-down' | 'menu' | 'close' | 'check' | 'code';
+  name: 'github' | 'linkedin' | 'x' | 'mail' | 'external' | 'location' | 'arrow-down' | 'menu' | 'close' | 'check' | 'code' | 'sun' | 'moon';
   class?: string;
 }
 
@@ -24,6 +24,8 @@ const strokePaths: Record<string, string> = {
   close: 'M6 6l12 12M18 6 6 18',
   check: 'M5 13l4 4L19 7',
   code: 'm8 8-5 4 5 4m8-8 5 4-5 4',
+  sun: 'M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41',
+  moon: 'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z',
 };
 ---
 

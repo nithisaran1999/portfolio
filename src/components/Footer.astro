@@ -1,12 +1,20 @@
 ---
 import Icon from './Icon.astro';
 import { site } from '../data/site';
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
 ---
 
 <footer class="border-t border-line py-10">
   <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
-    <p class="text-sm text-slate-400">
-      © {new Date().getFullYear()} {site.name}. Built with Astro &amp; Bun.
+    <p class="text-sm text-ink-3">
+      © {new Date().getFullYear()} {site.name}. {t.footer.builtWith}
     </p>
     <div class="flex items-center gap-3">
       {
@@ -16,7 +24,7 @@ import { site } from '../data/site';
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.name}
-            class="text-slate-400 transition-colors hover:text-white"
+            class="text-ink-3 transition-colors hover:text-ink"
           >
             <Icon name={social.icon} class="h-5 w-5" />
           </a>
