@@ -162,25 +162,21 @@ export const skills: SkillGroup[] = [
 
 export const projects: Project[] = [
   {
-    title: { en: 'Project One', th: 'โปรเจกต์ 1' },
+    title: { en: 'Diabetes Patient Appointment & Syringe Management', th: 'ระบบจัดการนัดหมายและรับ–คืนเข็มสำหรับผู้ป่วยเบาหวาน' },
     description: {
-      en: 'A full-stack web application that helps teams plan and track work. Features real-time collaboration, a polished UI, and a fast, type-safe data layer.',
-      th: 'เว็บแอปพลิเคชันแบบฟูลสแตกที่ช่วยทีมวางแผนและติดตามงาน มาพร้อมการทำงานร่วมกันแบบเรียลไทม์ UI ที่ประณีต และ data layer ที่รวดเร็วแบบ type-safe',
+      en: 'A web application developed during an internship at 4X-Treme to manage appointments for diabetes patients and track syringe collection and returns.',
+      th: 'เว็บแอปพลิเคชันที่พัฒนาระหว่างฝึกงานที่ 4X-Treme สำหรับจัดการนัดหมายผู้ป่วยเบาหวาน และบันทึกการรับเข็มกับการคืนเข็ม',
     },
-    tech: ['TypeScript', 'React', 'Node.js', 'PostgreSQL'],
-    liveUrl: '#',
-    sourceUrl: 'https://github.com/yourname/project-one',
+    tech: ['Web App', 'Entity Framework'],
     featured: true,
   },
   {
-    title: { en: 'Project Two', th: 'โปรเจกต์ 2' },
+    title: { en: 'Donmuang Tollway Toll Collection System', th: 'ระบบจัดเก็บค่าผ่านทางดอนเมืองโทลล์เวย์' },
     description: {
-      en: 'A headless, content-driven marketing site built with Astro. Ships with zero JavaScript by default and scores 100 on Lighthouse.',
-      th: 'เว็บไซต์การตลาดแบบ headless ที่ขับเคลื่อนด้วยเนื้อหา สร้างด้วย Astro แทบไม่มี JavaScript โดยค่าเริ่มต้น และได้คะแนน Lighthouse เต็ม 100',
+      en: 'A toll collection program for toll booth employees to process vehicle payments on the Donmuang Tollway.',
+      th: 'โปรแกรมสำหรับพนักงานหน้าตู้ใช้จัดเก็บค่าผ่านทางจากรถที่สัญจรบนทางด่วนดอนเมืองโทลล์เวย์',
     },
-    tech: ['Astro', 'Tailwind CSS', 'MDX'],
-    liveUrl: '#',
-    sourceUrl: 'https://github.com/yourname/project-two',
+    tech: ['Toll Collection', 'Desktop Application'],
     featured: true,
   },
   {
