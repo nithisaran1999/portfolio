@@ -31,6 +31,7 @@ export type SkillGroup = {
 export type Experience = {
   role: BilingualText;
   company: BilingualText;
+  companyUrl?: string;
   period: BilingualText;
   description: BilingualText;
   highlights: BilingualText[];
@@ -205,44 +206,24 @@ export const projects: Project[] = [
 
 export const experience: Experience[] = [
   {
-    role: { en: 'Senior Software Engineer', th: 'วิศวกรซอฟต์แวร์อาวุโส' },
-    company: { en: 'Company Name', th: 'ชื่อบริษัท' },
-    period: { en: '2022 — Present', th: '2022 — ปัจจุบัน' },
+    role: { en: 'Full Stack Programmer', th: 'โปรแกรมเมอร์ฟูลสแตก' },
+    company: { en: '1008bit Co., Ltd.', th: 'บริษัท 1008บิท จำกัด' },
+    period: { en: '2021 — Present', th: '2021 — ปัจจุบัน' },
     description: {
-      en: 'Lead development of customer-facing features and internal tooling, mentoring engineers and driving accessibility and performance initiatives.',
-      th: 'นำทีมพัฒนาฟีเจอร์ที่ใช้งานจริงและเครื่องมือภายใน ให้คำปรึกษาวิศวกร และผลักดันโครงการด้านการเข้าถึงและประสิทธิภาพ',
+      en: 'Working as a full-stack programmer at 1008bit Co., Ltd.',
+      th: 'ทำงานในตำแหน่งโปรแกรมเมอร์ฟูลสแตกที่บริษัท 1008บิท จำกัด',
     },
-    highlights: [
-      { en: 'Reduced page load times by 40% through performance profiling and code-splitting.', th: 'ลดเวลาโหลดหน้าเว็บลง 40% ด้วยการวิเคราะห์ประสิทธิภาพและการแยกโค้ด' },
-      { en: 'Built a reusable design system adopted across three product teams.', th: 'สร้าง design system ที่นำกลับมาใช้ใหม่ได้และถูกใช้โดยทีมผลิตภัณฑ์ 3 ทีม' },
-      { en: 'Mentored four engineers and ran the frontend guild.', th: 'ให้คำปรึกษาวิศวกร 4 คนและดูแลชุมชนนักพัฒนาฟรอนต์เอนด์' },
-    ],
+    highlights: [],
   },
   {
-    role: { en: 'Software Engineer', th: 'วิศวกรซอฟต์แวร์' },
-    company: { en: 'Previous Company', th: 'บริษัทก่อนหน้า' },
-    period: { en: '2020 — 2022', th: '2020 — 2022' },
+    role: { en: 'Software Development Intern', th: 'นักศึกษาฝึกงานด้านการพัฒนาซอฟต์แวร์' },
+    company: { en: '4X-Treme', th: '4X-Treme' },
+    companyUrl: 'https://www.4x-treme.com/',
+    period: { en: '2021', th: '2021' },
     description: {
-      en: 'Shipped full-stack features end to end, collaborating closely with design and product to deliver polished, reliable software.',
-      th: 'ส่งมอบฟีเจอร์ฟูลสแตกตั้งแต่ต้นจนจบ ทำงานใกล้ชิดกับทีมออกแบบและผลิตภัณฑ์เพื่อส่งมอบซอฟต์แวร์ที่ประณีตและเชื่อถือได้',
+      en: 'Developed web applications using Entity Framework.',
+      th: 'รับผิดชอบการพัฒนาเว็บแอปพลิเคชันโดยใช้ Entity Framework',
     },
-    highlights: [
-      { en: 'Delivered a real-time collaboration feature used by thousands of customers.', th: 'ส่งมอบฟีเจอร์การทำงานร่วมกันแบบเรียลไทม์ที่มีลูกค้าใช้งานนับพันราย' },
-      { en: 'Introduced automated testing that cut regression bugs by 30%.', th: 'นำการทดสอบอัตโนมัติมาใช้ ลดบั๊กแบบ regression ลง 30%' },
-      { en: 'Owned the migration to TypeScript across the codebase.', th: 'รับผิดชอบการย้ายโค้ดเบสทั้งหมดไปใช้ TypeScript' },
-    ],
-  },
-  {
-    role: { en: 'Junior Developer', th: 'นักพัฒนาจูเนียร์' },
-    company: { en: 'First Company', th: 'บริษัทแรก' },
-    period: { en: '2019 — 2020', th: '2019 — 2020' },
-    description: {
-      en: 'Built and maintained marketing sites and web apps while learning modern development practices.',
-      th: 'สร้างและดูแลเว็บไซต์การตลาดและเว็บแอปพลิเคชัน พร้อมเรียนรู้แนวทางการพัฒนาสมัยใหม่',
-    },
-    highlights: [
-      { en: 'Rebuilt the company marketing site with a modern stack.', th: 'ปรับปรุงเว็บไซต์การตลาดของบริษัทใหม่ด้วยเทคโนโลยีสมัยใหม่' },
-      { en: 'Collaborated on the core product UI and API integrations.', th: 'ร่วมพัฒนาส่วน UI ของผลิตภัณฑ์หลักและการเชื่อมต่อ API' },
-    ],
+    highlights: [],
   },
 ];
