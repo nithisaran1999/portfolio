@@ -47,7 +47,7 @@ export type ValuePoint = {
 };
 
 export const site = {
-  name: 'Nithisaran Suksom',
+  name: 'Nithisaran',
   role: {
     en: 'AI-Driven Software Developer',
     th: 'นักพัฒนาซอฟต์แวร์ขับเคลื่อนด้วย AI',
@@ -60,12 +60,12 @@ export const site = {
     en: 'Thailand',
     th: 'ประเทศไทย',
   },
-  email: 'nithisaran.suksom@gmail.com',
+  email: 'nithisaran@gmail.com',
   socials: [
     { name: 'GitHub', url: 'https://github.com/yourname', icon: 'github' },
     { name: 'LinkedIn', url: 'https://linkedin.com/in/yourname', icon: 'linkedin' },
     { name: 'X', url: 'https://x.com/yourname', icon: 'x' },
-    { name: 'Email', url: 'mailto:nithisaran.suksom@gmail.com', icon: 'mail' },
+    { name: 'Email', url: 'mailto:nithisaran@gmail.com', icon: 'mail' },
   ] satisfies Social[],
 } as const;
 
