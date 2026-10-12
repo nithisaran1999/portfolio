@@ -1,0 +1,88 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+---
+
+<section
+  id="top"
+  class="relative flex min-h-screen items-center overflow-hidden px-6 pt-24 pb-16"
+>
+  <!-- Decorative background -->
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 -z-10"
+  >
+    <div
+      class="absolute -top-32 right-[-10%] h-[28rem] w-[28rem] rounded-full bg-indigo-600/20 blur-3xl"
+    ></div>
+    <div
+      class="absolute bottom-[-10%] left-[-5%] h-[24rem] w-[24rem] rounded-full bg-cyan-500/10 blur-3xl"
+    ></div>
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.05)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_40%,black,transparent)]"
+    ></div>
+  </div>
+
+  <div class="mx-auto w-full max-w-6xl">
+    <div class="max-w-3xl animate-fade-up">
+      <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-white/5 px-4 py-1.5 text-sm text-slate-300">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+        </span>
+        Available for new opportunities
+      </p>
+
+      <h1 class="font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
+        Hi, I'm <span class="text-gradient">{site.name}</span>
+      </h1>
+
+      <p class="mt-4 font-display text-xl font-medium text-slate-300 sm:text-2xl">
+        {site.role}
+      </p>
+
+      <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
+        {site.tagline}
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a
+          href="#projects"
+          class="inline-flex items-center gap-2 rounded-xl bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition-all hover:bg-indigo-400 hover:shadow-indigo-400/30"
+        >
+          View my work
+          <Icon name="arrow-down" class="h-4 w-4" />
+        </a>
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 rounded-xl border border-line bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/10"
+        >
+          Get in touch
+        </a>
+      </div>
+
+      <div class="mt-10 flex flex-wrap items-center gap-4">
+        <span class="inline-flex items-center gap-2 text-sm text-slate-400">
+          <Icon name="location" class="h-4 w-4" />
+          {site.location}
+        </span>
+        <span class="hidden h-4 w-px bg-line sm:block" aria-hidden="true"></span>
+        <div class="flex items-center gap-1">
+          {
+            site.socials.map((social) => (
+              <a
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.name}
+                class="rounded-lg p-2 text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
+              >
+                <Icon name={social.icon} class="h-5 w-5" />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

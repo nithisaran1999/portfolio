@@ -1,0 +1,8 @@
+# Netlify build configuration — see https://docs.netlify.com/configure-builds/
+[build]
+  command = "bun run build"
+  publish = "dist"
+
+# Pin Bun to match the version that generated bun.lockb for reproducible builds.
+[build.environment]
+  BUN_VERSION = "1.4.3"

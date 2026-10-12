@@ -1,0 +1,4 @@
+# Keep the binary lockfile (bun.lockb) rather than the text one (bun.lock).
+# Netlify auto-detects Bun as the package manager by the presence of bun.lockb.
+[install]
+saveTextLockfile = false

@@ -1,0 +1,44 @@
+// Created from the "bun" template of Bare Dev Container Templates.
+// Usage, options, security defaults, and tips: https://github.com/bare-devcontainer/templates/tree/main/src/bun
+// What is installed in the image, and available tags: https://github.com/bare-devcontainer/images
+{
+  "name": "Bun",
+  // Recommended: pin to a digest (e.g. "ghcr.io/bare-devcontainer/bun:1-trixie@sha256:<digest>").
+  // See https://github.com/bare-devcontainer/templates#pinning-images-to-a-digest
+  "image": "ghcr.io/bare-devcontainer/bun:1-trixie",
+  "remoteUser": "dev",
+  "runArgs": ["--cap-drop=ALL"],
+  // Remove "no-new-privileges" if users need to gain elevated privileges inside the container (e.g., su, sudo).
+  "securityOpt": ["no-new-privileges"],
+  "init": true,
+  // If you use VS Code, uncomment the following to open $EDITOR/$VISUAL/$GIT_EDITOR (e.g. `git commit`) in a VS Code tab:
+  // "remoteEnv": {
+  //   "VISUAL": "code --wait",
+  //   "EDITOR": "code --wait",
+  //   "GIT_EDITOR": "code --wait"
+  // },
+  "mounts": [
+    // Persist Bun's global install cache across rebuilds to avoid re-downloading packages.
+    {
+      "source": "${devcontainerId}-bun-install-cache",
+      "target": "/home/dev/.bun/install/cache",
+      "type": "volume"
+    },
+    // Persist the shell history the image keeps in this directory.
+    {
+      "source": "${devcontainerId}-bash-history",
+      "target": "/home/dev/.local/state/bash",
+      "type": "volume"
+    }
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "oven.bun-vscode"
+      ],
+      "settings": {
+        "bun.runtime": "/usr/local/bin/bun"
+      }
+    }
+  }
+}

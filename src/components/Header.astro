@@ -1,0 +1,99 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+
+const navLinks = [
+  { href: '#about', label: 'About' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<header
+  class="fixed inset-x-0 top-0 z-50 border-b border-line bg-surface/80 backdrop-blur-md"
+>
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4" aria-label="Main">
+    <a href="#top" class="font-display text-lg font-semibold tracking-tight text-white">
+      <span class="text-gradient">{site.name.split(' ')[0]}</span><span>.</span>
+    </a>
+
+    <ul class="hidden items-center gap-1 md:flex">
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+      <li class="ml-2">
+        <a
+          href={site.resumeUrl}
+          class="inline-flex items-center gap-2 rounded-lg bg-indigo-500/90 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-indigo-500"
+        >
+          Resume
+          <Icon name="external" class="h-4 w-4" />
+        </a>
+      </li>
+    </ul>
+
+    <button
+      type="button"
+      class="inline-flex items-center justify-center rounded-lg p-2 text-slate-200 transition-colors hover:bg-white/5 md:hidden"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      data-nav-toggle
+    >
+      <Icon name="menu" class="h-6 w-6" />
+    </button>
+  </nav>
+
+  <div class="hidden border-t border-line md:hidden" data-nav-menu>
+    <ul class="space-y-1 px-6 py-4">
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-white/5"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a
+          href={site.resumeUrl}
+          class="mt-2 block rounded-lg bg-indigo-500/90 px-3 py-2 text-center text-sm font-semibold text-white"
+        >
+          Resume
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('[data-nav-toggle]');
+  const menu = document.querySelector('[data-nav-menu]');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close the menu when a link is clicked.
+  menu?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }),
+  );
+</script>
