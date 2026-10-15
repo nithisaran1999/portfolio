@@ -54,8 +54,8 @@ export const site = {
     th: 'นักพัฒนาซอฟต์แวร์ขับเคลื่อนด้วย AI',
   },
   tagline: {
-    en: 'I build fast, accessible, and delightful web experiences.',
-    th: 'ฉันสร้างเว็บที่รวดเร็ว เข้าถึงได้ และน่าใช้งาน',
+    en: 'I understand your business and apply AI to build practical solutions that create real value.',
+    th: 'ผมเข้าใจธุรกิจของคุณ และนำ AI มาประยุกต์ใช้เพื่อสร้างโซลูชันที่ตอบโจทย์และสร้างมูลค่าได้จริง',
   },
   location: {
     en: 'Thailand',
