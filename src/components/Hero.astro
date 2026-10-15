@@ -9,45 +9,71 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = ui[lang];
+
+const cyclingTags =
+  lang === 'th'
+    ? [
+        'เวิร์กโฟลว์ขับเคลื่อนด้วย AI',
+        'สถาปัตยกรรม Full-Stack สมัยใหม่',
+        'พัฒนาไว • โค้ดสะอาด • ดูแลง่าย',
+      ]
+    : [
+        'AI-First Engineering Workflows',
+        'Modern Full-Stack Architecture',
+        'Fast Iteration • Clean Code',
+      ];
 ---
 
 <section
   id="top"
-  class="relative flex min-h-screen items-center overflow-hidden px-6 pt-24 pb-16"
+  class="relative flex min-h-screen items-center overflow-hidden px-6 pt-28 pb-20"
 >
-  <!-- Decorative background -->
-  <div
-    aria-hidden="true"
-    class="pointer-events-none absolute inset-0 -z-10"
-  >
+  <!-- Decorative glowing mesh background -->
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
     <div
-      class="absolute -top-32 right-[-10%] h-[28rem] w-[28rem] rounded-full bg-indigo-600/20 blur-3xl animate-float"
+      class="absolute -top-36 right-[-8%] h-[32rem] w-[32rem] rounded-full bg-indigo-600/20 blur-3xl animate-float dark:bg-indigo-500/25"
     ></div>
     <div
-      class="absolute bottom-[-10%] left-[-5%] h-[24rem] w-[24rem] rounded-full bg-cyan-500/10 blur-3xl animate-float-slow"
+      class="absolute top-1/3 left-[-8%] h-[26rem] w-[26rem] rounded-full bg-cyan-500/15 blur-3xl animate-float-slow dark:bg-cyan-500/15"
     ></div>
     <div
-      class="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.05)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_40%,black,transparent)] dark:bg-[linear-gradient(to_right,rgba(148,163,184,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.05)_1px,transparent_1px)]"
+      class="absolute bottom-[-12%] right-1/4 h-[22rem] w-[22rem] rounded-full bg-violet-500/15 blur-3xl animate-pulse-glow"
+    ></div>
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.07)_1px,transparent_1px)] bg-[size:52px_52px] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_40%,black,transparent)]"
     ></div>
   </div>
 
-  <div class="mx-auto w-full max-w-6xl">
-    <div class="max-w-3xl animate-fade-up">
-      <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-slate-900/5 px-4 py-1.5 text-sm text-ink-2 dark:bg-white/5">
-        <span class="relative flex h-2 w-2">
+  <div class="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_0.95fr] lg:gap-10">
+    <!-- Left Column: Intro & CTA -->
+    <div class="animate-fade-up">
+      <div class="mb-6 inline-flex items-center gap-2.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-4 py-1.5 text-sm font-medium text-emerald-700 shadow-xs backdrop-blur-md dark:border-emerald-400/25 dark:bg-emerald-400/10 dark:text-emerald-300">
+        <span class="relative flex h-2.5 w-2.5">
           <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+          <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500 dark:bg-emerald-400"></span>
         </span>
         {t.hero.badge}
-      </p>
+      </div>
 
-      <h1 class="font-display text-4xl font-bold leading-tight tracking-tight text-ink sm:text-6xl">
-        {t.hero.greeting} <span class="text-gradient">{site.name}</span>
+      <h1 class="font-display text-4xl font-bold leading-[1.12] tracking-tight text-ink sm:text-6xl">
+        {t.hero.greeting}{' '}
+        <span class="text-gradient inline-block">{site.name}</span>
       </h1>
 
-      <p class="mt-4 font-display text-xl font-medium text-ink-2 sm:text-2xl">
-        {site.role[lang]}
-      </p>
+      <div class="mt-4 flex flex-wrap items-center gap-3">
+        <p class="font-display text-xl font-semibold text-ink-2 sm:text-2xl">
+          {site.role[lang]}
+        </p>
+      </div>
+
+      <!-- Dynamic cycling specialty pill -->
+      <div class="mt-4 inline-flex items-center gap-2 rounded-xl border border-line bg-surface-2/80 px-3.5 py-2 font-mono text-xs font-medium text-indigo-600 shadow-xs backdrop-blur-md sm:text-sm dark:text-indigo-300">
+        <Icon name="sparkles" class="h-4 w-4 shrink-0 text-indigo-500 dark:text-indigo-400" />
+        <span data-hero-rotator data-phrases={JSON.stringify(cyclingTags)} class="transition-opacity duration-300">
+          {cyclingTags[0]}
+        </span>
+        <span class="inline-block h-4 w-0.5 animate-pulse bg-indigo-500 dark:bg-indigo-400"></span>
+      </div>
 
       <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-3">
         {site.tagline[lang]}
@@ -56,26 +82,27 @@ const t = ui[lang];
       <div class="mt-8 flex flex-wrap items-center gap-4">
         <a
           href="#projects"
-          class="inline-flex items-center gap-2 rounded-xl bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition-all hover:bg-indigo-400 hover:shadow-indigo-400/30"
+          class="btn-glow inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-indigo-500/40"
         >
           {t.hero.viewWork}
           <Icon name="arrow-down" class="h-4 w-4 animate-bounce-soft" />
         </a>
         <a
           href="#contact"
-          class="inline-flex items-center gap-2 rounded-xl border border-line bg-slate-900/5 px-6 py-3 text-sm font-semibold text-ink-2 transition-colors hover:bg-slate-900/10 dark:bg-white/5 dark:hover:bg-white/10"
+          class="inline-flex items-center gap-2 rounded-xl border border-line bg-surface-2/80 px-6 py-3.5 text-sm font-semibold text-ink-2 shadow-xs backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-500/40 hover:bg-indigo-500/5 hover:text-ink dark:hover:text-white"
         >
           {t.hero.getInTouch}
+          <Icon name="arrow-up-right" class="h-4 w-4 text-ink-3" />
         </a>
       </div>
 
-      <div class="mt-10 flex flex-wrap items-center gap-4">
-        <span class="inline-flex items-center gap-2 text-sm text-ink-3">
-          <Icon name="location" class="h-4 w-4" />
+      <div class="mt-10 flex flex-wrap items-center gap-4 border-t border-line pt-6">
+        <span class="inline-flex items-center gap-2 rounded-lg bg-surface-2 px-3 py-1.5 text-sm font-medium text-ink-3 ring-1 ring-slate-900/5 dark:ring-white/10">
+          <Icon name="location" class="h-4 w-4 text-indigo-500 dark:text-indigo-400" />
           {site.location[lang]}
         </span>
         <span class="hidden h-4 w-px bg-line sm:block" aria-hidden="true"></span>
-        <div class="flex items-center gap-1">
+        <div class="flex items-center gap-1.5">
           {
             site.socials.map((social) => (
               <a
@@ -83,7 +110,7 @@ const t = ui[lang];
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.name}
-                class="rounded-lg p-2 text-ink-3 transition-colors hover:bg-slate-900/5 hover:text-ink dark:hover:bg-white/5 dark:hover:text-white"
+                class="inline-flex items-center justify-center rounded-xl border border-line bg-surface-2/70 p-2.5 text-ink-3 transition-all hover:-translate-y-0.5 hover:border-indigo-500/40 hover:bg-indigo-500/10 hover:text-indigo-600 dark:hover:text-indigo-300"
               >
                 <Icon name={social.icon} class="h-5 w-5" />
               </a>
@@ -92,5 +119,161 @@ const t = ui[lang];
         </div>
       </div>
     </div>
+
+    <!-- Right Column: Interactive AI Agent / Code Preview Window -->
+    <div class="relative animate-fade-up" style="animation-delay: 150ms;">
+      <!-- Glow behind terminal -->
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-tr from-indigo-500/25 via-violet-500/20 to-cyan-400/25 blur-2xl"
+      ></div>
+
+      <!-- Floating Badge Top Right -->
+      <div class=" absolute -top-5 right-4 z-20 hidden items-center gap-2.5 rounded-2xl border border-line bg-surface-2/95 px-4 py-2.5 shadow-xl backdrop-blur-md sm:flex animate-float">
+        <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
+          <Icon name="zap" class="h-4 w-4" />
+        </span>
+        <div>
+          <p class="text-xs font-semibold text-ink">
+            {lang === 'th' ? 'ความเร็วการส่งมอบ' : 'Iteration Speed'}
+          </p>
+          <p class="font-mono text-[11px] text-emerald-600 dark:text-emerald-400">
+            ⚡ 3x Faster with AI Agents
+          </p>
+        </div>
+      </div>
+
+      <!-- Main IDE / Terminal Card -->
+      <div
+        data-tilt
+        class="spotlight-card rounded-3xl border border-slate-800/80 bg-[#0b101e]/95 text-slate-200 shadow-2xl shadow-indigo-950/40 backdrop-blur-xl"
+      >
+        <!-- Window Top Bar -->
+        <div class="flex items-center justify-between border-b border-slate-800/80 bg-slate-900/70 px-5 py-3.5">
+          <div class="flex items-center gap-2">
+            <span class="h-3 w-3 rounded-full bg-rose-500/85"></span>
+            <span class="h-3 w-3 rounded-full bg-amber-400/85"></span>
+            <span class="h-3 w-3 rounded-full bg-emerald-500/85"></span>
+          </div>
+          <div class="flex items-center gap-2 rounded-lg bg-slate-800/80 px-3 py-1 font-mono text-xs text-slate-300">
+            <Icon name="terminal" class="h-3.5 w-3.5 text-indigo-400" />
+            <span>ai-workflow.ts</span>
+          </div>
+          <span class="rounded-full bg-emerald-500/15 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-emerald-400 ring-1 ring-emerald-500/30">
+            ACTIVE
+          </span>
+        </div>
+
+        <!-- Code & Agent Simulation Content -->
+        <div class="space-y-4 p-6 font-mono text-xs leading-relaxed sm:text-[13px]">
+          <div class="flex items-start gap-3">
+            <span class="select-none text-slate-600">01</span>
+            <div>
+              <span class="text-violet-400">const</span>{' '}
+              <span class="text-cyan-300">developer</span> ={' '}
+              <span class="text-indigo-300">createEngineer</span>(&#123;
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="select-none text-slate-600">02</span>
+            <div class="pl-4">
+              name: <span class="text-emerald-300">'{site.name}'</span>,
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="select-none text-slate-600">03</span>
+            <div class="pl-4">
+              focus: <span class="text-amber-300">['Full-Stack', 'AI Workflows', 'UX']</span>,
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="select-none text-slate-600">04</span>
+            <div class="pl-4">
+              mindset: <span class="text-emerald-300">'Pragmatic & High-Impact'</span>,
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="select-none text-slate-600">05</span>
+            <div>&#125;);</div>
+          </div>
+
+          <!-- Interactive Agent Pipeline Steps -->
+          <div class="mt-4 rounded-2xl border border-slate-800 bg-slate-900/90 p-4">
+            <div class="mb-2.5 flex items-center justify-between text-[11px] text-slate-400">
+              <span class="flex items-center gap-1.5 font-semibold text-indigo-300">
+                <Icon name="cpu" class="h-3.5 w-3.5" />
+                {lang === 'th' ? 'ไปป์ไลน์การพัฒนาด้วย AI' : 'AI-Assisted Pipeline'}
+              </span>
+              <span class="text-emerald-400">100% Ready</span>
+            </div>
+
+            <div class="space-y-2 text-xs">
+              <div class="flex items-center justify-between rounded-lg bg-slate-800/60 px-3 py-1.5">
+                <span class="flex items-center gap-2 text-slate-300">
+                  <span class="text-emerald-400">✓</span>
+                  {lang === 'th' ? 'ออกแบบสถาปัตยกรรมและ डेटाโมเดล' : 'System Architecture & Schema'}
+                </span>
+                <span class="text-[10px] text-slate-400">24ms</span>
+              </div>
+
+              <div class="flex items-center justify-between rounded-lg bg-slate-800/60 px-3 py-1.5">
+                <span class="flex items-center gap-2 text-slate-300">
+                  <span class="text-emerald-400">✓</span>
+                  {lang === 'th' ? 'สร้างโค้ดที่สะอาดและตรวจสอบชนิดข้อมูล' : 'Type-Safe Implementation'}
+                </span>
+                <span class="text-[10px] text-slate-400">68ms</span>
+              </div>
+
+              <div class="flex items-center justify-between rounded-lg border border-indigo-500/30 bg-indigo-500/10 px-3 py-1.5">
+                <span class="flex items-center gap-2 text-indigo-200">
+                  <span class="h-2 w-2 animate-ping rounded-full bg-indigo-400"></span>
+                  {lang === 'th' ? 'พร้อมส่งมอบคุณค่าให้โปรเจกต์ของคุณ' : 'Ready to ship business value'}
+                </span>
+                <span class="font-semibold text-indigo-300">SHIP 🚀</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Badge Bottom Left -->
+      <div class="absolute -bottom-5 left-4 z-20 hidden items-center gap-2.5 rounded-2xl border border-line bg-surface-2/95 px-4 py-2.5 shadow-xl backdrop-blur-md sm:flex animate-float-slow">
+        <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-600 dark:text-cyan-400">
+          <Icon name="shield-check" class="h-4 w-4" />
+        </span>
+        <div>
+          <p class="text-xs font-semibold text-ink">
+            {lang === 'th' ? 'คุณภาพโค้ดมาตรฐานสูง' : 'Production-Grade Quality'}
+          </p>
+          <p class="font-mono text-[11px] text-ink-3">
+            Clean • Scalable • Maintainable
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+  // Smooth rotating text in Hero specialty pill
+  const rotator = document.querySelector<HTMLElement>('[data-hero-rotator]');
+  if (rotator) {
+    const raw = rotator.getAttribute('data-phrases');
+    const phrases: string[] = raw ? JSON.parse(raw) : [];
+    if (phrases.length > 1) {
+      let idx = 0;
+      setInterval(() => {
+        idx = (idx + 1) % phrases.length;
+        rotator.style.opacity = '0';
+        setTimeout(() => {
+          rotator.textContent = phrases[idx] ?? '';
+          rotator.style.opacity = '1';
+        }, 250);
+      }, 3400);
+    }
+  }
+</script>

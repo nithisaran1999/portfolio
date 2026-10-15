@@ -11,12 +11,22 @@ const { lang } = Astro.props;
 const t = ui[lang];
 ---
 
-<footer class="border-t border-line py-10">
+<footer class="border-t border-line bg-surface-2/40 py-10">
   <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
-    <p class="text-sm text-ink-3">
-      © {new Date().getFullYear()} {site.name}. {t.footer.builtWith}
-    </p>
     <div class="flex items-center gap-3">
+      <img
+        src="/favicon.svg"
+        alt=""
+        width="24"
+        height="24"
+        class="h-6 w-6 rounded-md"
+      />
+      <p class="text-sm text-ink-3">
+        © {new Date().getFullYear()} <span class="font-semibold text-ink">{site.name}</span>. {t.footer.builtWith}
+      </p>
+    </div>
+
+    <div class="flex items-center gap-2">
       {
         site.socials.map((social) => (
           <a
@@ -24,9 +34,9 @@ const t = ui[lang];
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.name}
-            class="text-ink-3 transition-colors hover:text-ink"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-line bg-surface text-ink-3 transition-all hover:-translate-y-0.5 hover:border-indigo-500/40 hover:text-indigo-600 dark:hover:text-indigo-300"
           >
-            <Icon name={social.icon} class="h-5 w-5" />
+            <Icon name={social.icon} class="h-4 w-4" />
           </a>
         ))
       }

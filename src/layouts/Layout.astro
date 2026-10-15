@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
 import '../styles/global.css';
 import { site } from '../data/site';
 import type { Lang } from '../i18n/ui';
@@ -33,12 +34,12 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#0b0f1a" />
+    <meta name="theme-color" content="#070b14" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -59,16 +60,32 @@ const {
       })();
     </script>
   </head>
-  <body class="min-h-screen bg-surface text-ink-2 antialiased">
+  <body class="relative min-h-screen bg-surface text-ink-2 antialiased selection:bg-indigo-500/30">
+    <!-- Subtle ambient global background glows -->
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-20 overflow-hidden">
+      <div class="absolute -top-48 left-1/4 h-96 w-96 rounded-full bg-indigo-500/[0.04] blur-3xl dark:bg-indigo-500/[0.07]"></div>
+      <div class="absolute top-1/2 right-10 h-96 w-96 rounded-full bg-cyan-500/[0.04] blur-3xl dark:bg-cyan-500/[0.06]"></div>
+    </div>
+
     <Header lang={lang} />
     <main id="main">
       <slot />
     </main>
     <Footer lang={lang} />
 
+    <!-- Floating Back to Top Button -->
+    <button
+      type="button"
+      data-back-to-top
+      aria-label={lang === 'th' ? 'กลับขึ้นด้านบน' : 'Back to top'}
+      class="fixed right-6 bottom-6 z-40 flex h-11 w-11 translate-y-16 items-center justify-center rounded-2xl border border-line bg-surface-2/85 text-ink-2 opacity-0 shadow-lg shadow-black/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/40 hover:bg-indigo-500 hover:text-white hover:shadow-indigo-500/25 pointer-events-none dark:shadow-black/40"
+    >
+      <Icon name="arrow-up" class="h-5 w-5" />
+    </button>
+
     <script>
-      // Scroll-reveal animations (progressive enhancement).
-      const els = document.querySelectorAll('.reveal');
+      // 1. Scroll-reveal animations with automatic stagger inside grids/lists.
+      const els = document.querySelectorAll<HTMLElement>('.reveal');
       if ('IntersectionObserver' in window) {
         const io = new IntersectionObserver(
           (entries) => {
@@ -79,12 +96,62 @@ const {
               }
             }
           },
-          { threshold: 0.12 },
+          { threshold: 0.1, rootMargin: '0px 0px -40px 0px' },
         );
         els.forEach((el) => io.observe(el));
       } else {
         els.forEach((el) => el.classList.add('is-visible'));
       }
+
+      // 2. Interactive Spotlight & Subtle 3D Tilt on `.spotlight-card` elements.
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const cards = document.querySelectorAll<HTMLElement>('.spotlight-card');
+
+      cards.forEach((card) => {
+        const hasTilt = card.hasAttribute('data-tilt');
+
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+
+          if (hasTilt && !prefersReducedMotion && window.innerWidth >= 768) {
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -3.5;
+            const rotateY = ((x - centerX) / centerX) * 3.5;
+            card.style.transform = `perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+          }
+        });
+
+        card.addEventListener('mouseleave', () => {
+          if (hasTilt) {
+            card.style.transform = '';
+          }
+        });
+      });
+
+      // 3. Back to top button visibility & click action.
+      const backToTop = document.querySelector<HTMLButtonElement>('[data-back-to-top]');
+      const toggleBackToTop = () => {
+        if (!backToTop) return;
+        if (window.scrollY > 450) {
+          backToTop.classList.remove('translate-y-16', 'opacity-0', 'pointer-events-none');
+          backToTop.classList.add('translate-y-0', 'opacity-100');
+        } else {
+          backToTop.classList.add('translate-y-16', 'opacity-0', 'pointer-events-none');
+          backToTop.classList.remove('translate-y-0', 'opacity-100');
+        }
+      };
+
+      window.addEventListener('scroll', toggleBackToTop, { passive: true });
+      toggleBackToTop();
+
+      backToTop?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     </script>
   </body>
 </html>

@@ -1,4 +1,5 @@
 ---
+import Icon, { type IconName } from './Icon.astro';
 import SectionHeading from './SectionHeading.astro';
 import { valuePoints } from '../data/site';
 import { ui, type Lang } from '../i18n/ui';
@@ -9,9 +10,18 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = ui[lang];
+
+const valueIcons: IconName[] = ['zap', 'target', 'shield-check'];
+const badges = ['SPEED & OUTPUT', 'PRAGMATIC FOCUS', 'LONG-TERM QUALITY'];
 ---
 
-<section id="value" class="border-y border-line bg-surface-2/50">
+<section id="value" class="relative overflow-hidden border-y border-line bg-surface-2/50">
+  <!-- Decorative radial glow -->
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute left-1/2 top-0 -z-10 h-80 w-[42rem] -translate-x-1/2 rounded-full bg-indigo-500/10 blur-3xl"
+  ></div>
+
   <div class="mx-auto max-w-6xl px-6 py-24">
     <div class="reveal">
       <SectionHeading
@@ -23,17 +33,27 @@ const t = ui[lang];
 
     <div class="grid gap-6 md:grid-cols-3">
       {
-        valuePoints.map((item) => (
+        valuePoints.map((item, i) => (
           <article
-            class="reveal rounded-2xl border border-line bg-surface p-7 transition-all hover:-translate-y-1 hover:border-slate-900/20 dark:hover:border-white/20"
+            data-tilt
+            style={`--reveal-delay: ${i * 110}ms;`}
+            class="group reveal spotlight-card relative rounded-3xl border border-line bg-surface p-7 shadow-sm"
           >
-            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true">
-                <path d="M5 13l4 4L19 7" />
-              </svg>
-            </span>
-            <h3 class="mt-4 font-display text-lg font-semibold text-ink">{item.title[lang]}</h3>
-            <p class="mt-4 text-sm leading-relaxed text-ink-3">{item.body[lang]}</p>
+            <div class="flex items-center justify-between">
+              <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/25 transition-transform duration-300 group-hover:scale-110">
+                <Icon name={valueIcons[i] ?? 'zap'} class="h-6 w-6" />
+              </span>
+              <span class="font-mono text-[11px] font-semibold tracking-wider text-indigo-600/80 dark:text-indigo-400/80">
+                {badges[i]}
+              </span>
+            </div>
+
+            <h3 class="mt-6 font-display text-xl font-bold text-ink">
+              {item.title[lang]}
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink-3">
+              {item.body[lang]}
+            </p>
           </article>
         ))
       }

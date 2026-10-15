@@ -198,6 +198,14 @@ export const projects: Project[] = [
     liveUrl: '#',
     sourceUrl: 'https://github.com/yourname/project-four',
   },
+  {
+    title: { en: 'PTTEP-Document Center', th: 'PTTEP-Document Center' },
+    description: {
+      en: 'An internal financial document system for PTTEP.',
+      th: 'ระบบเอกสารการเงินภายใน PTTEP',
+    },
+    tech: ['Document Management', 'Finance', 'Internal System'],
+  },
 ];
 
 export const experience: Experience[] = [
