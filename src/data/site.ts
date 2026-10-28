@@ -21,6 +21,8 @@ export type Project = {
   liveUrl?: string;
   sourceUrl?: string;
   featured?: boolean;
+  tag?: string;
+  icon?: string;
 };
 
 export type SkillGroup = {
@@ -169,6 +171,8 @@ export const projects: Project[] = [
     },
     tech: ['Web App', 'Entity Framework'],
     featured: true,
+    tag: 'HEALTHCARE WEB APP',
+    icon: 'layers',
   },
   {
     title: { en: 'Donmuang Tollway Toll Collection System', th: 'ระบบจัดเก็บค่าผ่านทางดอนเมืองโทลล์เวย์' },
@@ -178,6 +182,32 @@ export const projects: Project[] = [
     },
     tech: ['Toll Collection', 'Desktop Application'],
     featured: true,
+    tag: 'TOLL COLLECTION SYSTEM',
+    icon: 'cpu',
+  },
+  {
+    title: {
+      en: 'Airport Weather Reporting System (RTAF)',
+      th: 'ระบบรายงานสภาพอากาศสนามบิน (กองข่าวอากาศ กองทัพอากาศ)',
+    },
+    description: {
+      en: 'An aviation weather reporting and monitoring system developed for the Air Weather Division, Royal Thai Air Force (RTAF), delivering real-time meteorological observations, airfield weather reports, and flight support data.',
+      th: 'ระบบรายงานและติดตามข้อมูลสภาพอากาศสนามบินของกองข่าวอากาศ กองทัพอากาศ สำหรับรวบรวมและรายงานข้อมูลอุตุนิยมวิทยาการบิน ข้อมูลสภาพอากาศประจำสถานี เพื่อสนับสนุนความปลอดภัยในการปฏิบัติภารกิจการบิน',
+    },
+    tech: ['Aviation Weather', 'Meteorological System', 'Web Application'],
+    featured: true,
+    tag: 'RTAF · AVIATION WEATHER',
+    icon: 'cloud',
+  },
+  {
+    title: { en: 'PTTEP-Document Center', th: 'PTTEP-Document Center' },
+    description: {
+      en: 'An internal financial document system for PTTEP.',
+      th: 'ระบบเอกสารการเงินภายใน PTTEP',
+    },
+    tech: ['Document Management', 'Finance', 'Internal System'],
+    tag: 'DOCUMENT MANAGEMENT',
+    icon: 'shield-check',
   },
   {
     title: { en: 'Project Three', th: 'โปรเจกต์ 3' },
@@ -187,6 +217,8 @@ export const projects: Project[] = [
     },
     tech: ['TypeScript', 'Node.js', 'Vitest'],
     sourceUrl: 'https://github.com/yourname/project-three',
+    tag: 'DEVELOPER TOOLING',
+    icon: 'terminal',
   },
   {
     title: { en: 'Project Four', th: 'โปรเจกต์ 4' },
@@ -197,14 +229,8 @@ export const projects: Project[] = [
     tech: ['React', 'D3.js', 'Tailwind CSS'],
     liveUrl: '#',
     sourceUrl: 'https://github.com/yourname/project-four',
-  },
-  {
-    title: { en: 'PTTEP-Document Center', th: 'PTTEP-Document Center' },
-    description: {
-      en: 'An internal financial document system for PTTEP.',
-      th: 'ระบบเอกสารการเงินภายใน PTTEP',
-    },
-    tech: ['Document Management', 'Finance', 'Internal System'],
+    tag: 'DATA VISUALIZATION',
+    icon: 'compass',
   },
 ];
 

@@ -26,7 +26,8 @@ export type IconName =
   | 'shield-check'
   | 'compass'
   | 'briefcase'
-  | 'globe';
+  | 'globe'
+  | 'cloud';
 
 interface Props {
   name: IconName;
@@ -68,6 +69,7 @@ const strokePaths: Record<string, string> = {
   'shield-check': 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Zm-3-10 2 2 4-4',
   compass: 'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Zm4.24-14.24-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12Z',
   briefcase: 'M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16m-4 0h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z',
+  cloud: 'M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z',
 };
 ---
 
