@@ -6,7 +6,7 @@
 export type Social = {
   name: string;
   url: string;
-  icon: 'github' | 'linkedin' | 'x' | 'mail' | 'website';
+  icon: 'github' | 'gitlab' | 'linkedin' | 'x' | 'mail' | 'website';
 };
 
 export type BilingualText = {
@@ -65,8 +65,8 @@ export const site = {
   },
   socials: [
     { name: 'GitHub', url: 'https://github.com/nithisaran1999', icon: 'github' },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/yourname', icon: 'linkedin' },
-    { name: 'X', url: 'https://x.com/yourname', icon: 'x' },
+    { name: 'GitLab', url: 'https://gitlab.com/nithisaran1999', icon: 'gitlab' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/nithisaran-suksom-70a533233/', icon: 'linkedin' },
   ] satisfies Social[],
 } as const;
 
