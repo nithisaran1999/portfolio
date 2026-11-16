@@ -143,15 +143,65 @@ const cyclingTags =
         </div>
       </div>
 
-      <img
+      <div
         data-tilt
-        src="/assets/cat.jpg"
-        alt={lang === 'th' ? 'แมวกำลังมองจอแล็ปท็อป' : 'A cat looking at a laptop'}
-        width="725"
-        height="408"
-        fetchpriority="high"
-        class="spotlight-card w-full rounded-3xl border border-line object-cover shadow-2xl shadow-indigo-950/40"
-      />
+        class="spotlight-card overflow-hidden rounded-3xl border border-slate-800/80 bg-[#0b101e]/95 text-slate-200 shadow-2xl shadow-indigo-950/40 backdrop-blur-xl"
+      >
+        <div class="flex items-center justify-between border-b border-slate-800/80 bg-slate-900/70 px-5 py-3.5">
+          <div class="flex items-center gap-2">
+            <span class="h-3 w-3 rounded-full bg-rose-500/85"></span>
+            <span class="h-3 w-3 rounded-full bg-amber-400/85"></span>
+            <span class="h-3 w-3 rounded-full bg-emerald-500/85"></span>
+          </div>
+          <div class="flex items-center gap-2 rounded-lg bg-slate-800/80 px-3 py-1 font-mono text-xs text-slate-300">
+            <Icon name="terminal" class="h-3.5 w-3.5 text-indigo-400" />
+            <span>fastfetch</span>
+          </div>
+          <span class="font-mono text-[10px] font-semibold text-emerald-400">READY</span>
+        </div>
+
+        <div class="grid grid-cols-[96px_minmax(0,1fr)] items-center gap-4 p-5 sm:grid-cols-[140px_minmax(0,1fr)] sm:gap-6 sm:p-6">
+          <img
+            src="/assets/cat.jpg"
+            alt={lang === 'th' ? 'แมวกำลังมองจอแล็ปท็อป' : 'A cat looking at a laptop'}
+            width="725"
+            height="408"
+            fetchpriority="high"
+            class="aspect-square w-full rounded-2xl border border-slate-700 object-cover shadow-lg"
+          />
+          <div class="min-w-0 font-mono text-[11px] leading-5 sm:text-xs sm:leading-6">
+            <p class="truncate font-bold text-fuchsia-300">{site.name}@portfolio</p>
+            <p class="mb-2 text-slate-500">--------------------</p>
+            <dl class="space-y-1">
+              <div class="flex gap-2">
+                <dt class="text-cyan-300">Role:</dt>
+                <dd class="min-w-0 truncate text-slate-300">{site.role[lang]}</dd>
+              </div>
+              <div class="flex gap-2">
+                <dt class="text-cyan-300">Focus:</dt>
+                <dd class="min-w-0 truncate text-slate-300">Full-Stack · AI</dd>
+              </div>
+              <div class="flex gap-2">
+                <dt class="text-cyan-300">Stack:</dt>
+                <dd class="min-w-0 truncate text-slate-300">Astro · TypeScript</dd>
+              </div>
+              <div class="flex gap-2">
+                <dt class="text-cyan-300">Location:</dt>
+                <dd class="min-w-0 truncate text-slate-300">{site.location[lang]}</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div aria-hidden="true" class="flex gap-1 border-t border-slate-800/80 px-5 py-3">
+          <span class="h-2 w-6 rounded-sm bg-slate-500"></span>
+          <span class="h-2 w-6 rounded-sm bg-rose-400"></span>
+          <span class="h-2 w-6 rounded-sm bg-emerald-400"></span>
+          <span class="h-2 w-6 rounded-sm bg-amber-300"></span>
+          <span class="h-2 w-6 rounded-sm bg-indigo-400"></span>
+          <span class="h-2 w-6 rounded-sm bg-cyan-300"></span>
+        </div>
+      </div>
 
       <!-- Floating Badge Bottom Left -->
       <div class="absolute -bottom-5 left-4 z-20 hidden items-center gap-2.5 rounded-2xl border border-line bg-surface-2/95 px-4 py-2.5 shadow-xl backdrop-blur-md sm:flex animate-float-slow">

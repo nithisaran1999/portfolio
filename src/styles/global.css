@@ -147,7 +147,7 @@
   opacity: 1;
 }
 
-.spotlight-card > * {
+.spotlight-card > *:not([aria-hidden="true"]) {
   position: relative;
   z-index: 3;
 }

@@ -27,7 +27,7 @@ const t = ui[lang];
       class="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-cyan-500/15 blur-3xl"
     ></div>
 
-    <div class="relative z-10 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+    <div class="relative z-10 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-start">
       <div>
         <SectionHeading
           eyebrow={t.contact.eyebrow}
@@ -45,9 +45,20 @@ const t = ui[lang];
       </div>
 
       <div>
-        <p class="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-ink-3">
-          {t.contact.findMe}
-        </p>
+        <div class="mb-4 flex items-center gap-4">
+          <img
+            src="/assets/cat.jpg"
+            alt={lang === 'th' ? 'แมวกำลังมองจอแล็ปท็อป' : 'A cat looking at a laptop'}
+            width="96"
+            height="96"
+            loading="lazy"
+            decoding="async"
+            class="h-16 w-16 shrink-0 rounded-2xl border border-line object-cover shadow-md"
+          />
+          <p class="font-display text-sm font-semibold uppercase tracking-wider text-ink-3">
+            {t.contact.findMe}
+          </p>
+        </div>
         <div class="grid gap-3 sm:grid-cols-1">
           {
             site.socials.map((social) => (
