@@ -54,11 +54,11 @@ export const site = {
   name: 'Nithisaran',
   role: {
     en: 'AI-Driven Software Developer',
-    th: 'นักพัฒนาซอฟต์แวร์ขับเคลื่อนด้วย AI',
+    th: 'นักพัฒนาซอฟต์แวร์ที่ใช้ AI ช่วยทำงาน',
   },
   tagline: {
     en: 'I understand your business and apply AI to build practical solutions that create real value.',
-    th: 'ผมเข้าใจธุรกิจของคุณ และนำ AI มาประยุกต์ใช้เพื่อสร้างโซลูชันที่ตอบโจทย์และสร้างมูลค่าได้จริง',
+    th: 'ผมเริ่มจากทำความเข้าใจธุรกิจและปัญหาที่คุณเจอ แล้วเลือกใช้เทคโนโลยี รวมถึง AI ให้เหมาะกับงาน',
   },
   location: {
     en: 'Thailand',
@@ -74,7 +74,7 @@ export const site = {
 export const aboutMe = {
   description: {
     en: 'A modern software developer focused on seamlessly blending Software Engineering with AI Workflows. I believe in leveraging AI to accelerate development (fast iteration) — from problem-solving and system design to code refactoring — to deliver high-quality work and create business value quickly and precisely.',
-    th: 'นักพัฒนาซอฟต์แวร์ยุคใหม่ที่มุ่งเน้นการผสานพลังระหว่าง Software Engineering และ AI Workflows เข้าด้วยกันอย่างลงตัว เชื่อมั่นในการใช้ประโยชน์จาก AI มาช่วยเร่งความเร็วในการพัฒนา (Fast Iteration) ตั้งแต่การคิดวิธีแก้ปัญหา การออกแบบระบบ ไปจนถึงการ Refactor โค้ด เพื่อส่งมอบงานที่มีคุณภาพและสร้าง Business Value ได้อย่างรวดเร็วแม่นยำ',
+    th: 'ผมเป็นนักพัฒนาซอฟต์แวร์ที่ใช้ AI ช่วยทำงาน ตั้งแต่คิดวิธีแก้ปัญหา ออกแบบระบบ ไปจนถึงปรับปรุงโค้ด ผมชอบหาวิธีทำงานให้คล่องขึ้น โดยยังใส่ใจคุณภาพโค้ดและสิ่งที่คนใช้งานต้องการ',
   },
 };
 
@@ -82,31 +82,31 @@ export const workApproach: WorkApproach[] = [
   {
     title: {
       en: 'AI-First & Efficiency Mindset',
-      th: 'แนวคิด AI-First และประสิทธิภาพ',
+      th: 'ใช้ AI ช่วยในงานพัฒนา',
     },
     body: {
       en: 'I treat AI as a working partner — using it to handle repetitive tasks (boilerplate) and accelerate solution discovery, so I can focus fully on core logic, architecture design, and the user experience (UX).',
-      th: 'มอง AI เป็น Partner ในการทำงาน โดยใช้ AI ช่วยจัดการงานซ้ำซ้อน (Boilerplate) และเร่งกระบวนการค้นหาโซลูชัน เพื่อให้มีเวลาโฟกัสกับ Core Logic, Architecture design และประสบการณ์ของผู้ใช้ (UX) ได้เต็มที่',
+      th: 'ผมใช้ AI เป็นผู้ช่วย ทั้งเขียนโค้ดส่วนที่ซ้ำ ๆ และช่วยหาวิธีแก้ปัญหา ทำให้มีเวลาใส่ใจกับการทำงานหลักของระบบ การออกแบบโครงสร้าง และประสบการณ์ของผู้ใช้มากขึ้น',
     },
   },
   {
     title: {
       en: 'Modern Developer Workflows',
-      th: 'เวิร์กโฟลว์นักพัฒนาสมัยใหม่',
+      th: 'วิธีทำงานและเครื่องมือที่ใช้',
     },
     body: {
       en: 'I weave AI agents and CLI tools into every stage of the development lifecycle to ship features faster while maintaining high code quality standards.',
-      th: 'ประยุกต์ใช้ AI Agent และ CLI Tools เข้ามาสอดแทรกในทุก Lifecycle ของการพัฒนา เพื่อเพิ่ม Speed ในการส่งมอบฟีเจอร์โดยยังคงมาตรฐานความถูกต้องของโค้ด',
+      th: 'ผมใช้ AI Agent และเครื่องมือ CLI ช่วยในแต่ละขั้นตอนของการพัฒนา เพื่อทำฟีเจอร์ได้เร็วขึ้น โดยยังตรวจสอบความถูกต้องของโค้ด',
     },
   },
   {
     title: {
       en: 'Adaptability & Continuous Learning',
-      th: 'ความยืดหยุ่นและการเรียนรู้ต่อเนื่อง',
+      th: 'พร้อมปรับตัวและเรียนรู้สิ่งใหม่',
     },
     body: {
       en: 'I continuously learn and adapt to new tools, analyzing the pros and cons of each solution to choose the approach that best fits the problem at hand.',
-      th: 'เรียนรู้และปรับตัวเข้ากับเครื่องมือใหม่ๆ อยู่เสมอ พร้อมวิเคราะห์ข้อดี-ข้อเสียของโซลูชันต่างๆ เพื่อเลือกใช้วิธีที่เหมาะสมที่สุดกับโจทย์ของแต่ละโครงการ',
+      th: 'ผมชอบลองเครื่องมือใหม่ ๆ และดูข้อดีข้อเสียก่อนเลือกใช้ให้เหมาะกับงาน เพราะแต่ละโปรเจกต์มีโจทย์ไม่เหมือนกัน',
     },
   },
 ];
@@ -115,31 +115,31 @@ export const valuePoints: ValuePoint[] = [
   {
     title: {
       en: 'High Productivity & Speed',
-      th: 'ประสิทธิภาพและความเร็วสูง',
+      th: 'ระบบเร็ว ใช้งานลื่น',
     },
     body: {
       en: 'Deliver work faster with AI-assisted workflows.',
-      th: 'ส่งมอบงานได้เร็วยิ่งขึ้นด้วย AI-Assisted Workflows',
+      th: 'ใช้ AI ช่วยให้งานเสร็จเร็วขึ้น',
     },
   },
   {
     title: {
       en: 'Pragmatic Problem Solving',
-      th: 'การแก้ปัญหาอย่างตรงจุด',
+      th: 'แก้ปัญหาให้ตรงจุด',
     },
     body: {
       en: 'Focus on solving problems precisely, quickly, and in ways that are easy to build on.',
-      th: 'มุ่งเน้นการแก้ปัญหาที่ตรงจุด รวดเร็ว และต่อยอดได้ง่าย',
+      th: 'เน้นแก้ปัญหาให้ตรงจุด ทำงานได้เร็ว และต่อยอดได้ง่าย',
     },
   },
   {
     title: {
       en: 'Clean & Maintainable Results',
-      th: 'ผลงานที่สะอาดและดูแลรักษาง่าย',
+      th: 'โค้ดอ่านง่าย ดูแลต่อได้',
     },
     body: {
       en: 'Prioritize well-organized, readable work that stays easy to maintain in the long term.',
-      th: 'ให้ความสำคัญกับโครงสร้างงานที่ระเบียบ อ่านง่าย และดูแลต่อได้ในระยะยาว',
+      th: 'ผมชอบจัดโครงสร้างโค้ดให้เป็นระเบียบ อ่านเข้าใจง่าย และดูแลต่อได้',
     },
   },
 ];
@@ -158,17 +158,17 @@ export const skills: SkillGroup[] = [
     items: ['Node.js', 'PostgreSQL', 'Redis', 'REST', 'GraphQL'],
   },
   {
-    category: { en: 'Tools & Practices', th: 'เครื่องมือและแนวปฏิบัติ' },
+    category: { en: 'Tools & Practices', th: 'เครื่องมือและวิธีทำงาน' },
     items: ['Git', 'Docker', 'CI/CD', 'Testing', 'Accessibility', 'Figma'],
   },
 ];
 
 export const projects: Project[] = [
   {
-    title: { en: 'Diabetes Patient Appointment & Syringe Management', th: 'ระบบจัดการนัดหมายและรับ–คืนเข็มสำหรับผู้ป่วยเบาหวาน' },
+    title: { en: 'Diabetes Patient Appointment & Syringe Management', th: 'ระบบนัดหมายและรับ–คืนเข็มสำหรับผู้ป่วยเบาหวาน' },
     description: {
       en: 'A web application developed during an internship at 4X-Treme to manage appointments for diabetes patients and track syringe collection and returns.',
-      th: 'เว็บแอปพลิเคชันที่พัฒนาระหว่างฝึกงานที่ 4X-Treme สำหรับจัดการนัดหมายผู้ป่วยเบาหวาน และบันทึกการรับเข็มกับการคืนเข็ม',
+      th: 'เว็บแอปที่ผมพัฒนาระหว่างฝึกงานที่ 4X-Treme ใช้นัดหมายผู้ป่วยเบาหวานและบันทึกการรับ–คืนเข็ม',
     },
     tech: ['Web App', 'Entity Framework'],
     featured: true,
@@ -179,7 +179,7 @@ export const projects: Project[] = [
     title: { en: 'Donmuang Tollway Toll Collection System', th: 'ระบบจัดเก็บค่าผ่านทางดอนเมืองโทลล์เวย์' },
     description: {
       en: 'A toll collection program for toll booth employees to process vehicle payments on the Donmuang Tollway.',
-      th: 'โปรแกรมสำหรับพนักงานหน้าตู้ใช้จัดเก็บค่าผ่านทางจากรถที่สัญจรบนทางด่วนดอนเมืองโทลล์เวย์',
+      th: 'โปรแกรมที่พนักงานประจำตู้ใช้เก็บค่าผ่านทางจากรถที่ใช้ทางด่วนดอนเมืองโทลล์เวย์',
     },
     tech: ['Toll Collection', 'Desktop Application'],
     logo: '/assets/DMT.png',
@@ -194,7 +194,7 @@ export const projects: Project[] = [
     },
     description: {
       en: 'An aviation weather reporting and monitoring system developed for the Air Weather Division, Royal Thai Air Force (RTAF), delivering real-time meteorological observations, airfield weather reports, and flight support data.',
-      th: 'ระบบรายงานและติดตามข้อมูลสภาพอากาศสนามบินของกองข่าวอากาศ กองทัพอากาศ สำหรับรวบรวมและรายงานข้อมูลอุตุนิยมวิทยาการบิน ข้อมูลสภาพอากาศประจำสถานี เพื่อสนับสนุนความปลอดภัยในการปฏิบัติภารกิจการบิน',
+      th: 'ระบบของกองข่าวอากาศ กองทัพอากาศ ใช้รวบรวม ติดตาม และรายงานสภาพอากาศสนามบินและข้อมูลประจำสถานี เพื่อช่วยให้การปฏิบัติภารกิจการบินปลอดภัย',
     },
     tech: ['Aviation Weather', 'Meteorological System', 'Web Application'],
     logo: '/assets/rtaf.png',
@@ -203,7 +203,7 @@ export const projects: Project[] = [
     icon: 'cloud',
   },
   {
-    title: { en: 'PTTEP-Document Center', th: 'PTTEP-Document Center' },
+    title: { en: 'PTTEP-Document Center', th: 'ระบบเอกสารการเงินภายใน PTTEP' },
     description: {
       en: 'An internal financial document system for PTTEP.',
       th: 'ระบบเอกสารการเงินภายใน PTTEP',
@@ -216,11 +216,11 @@ export const projects: Project[] = [
   {
     title: {
       en: 'PSC E-Asset State Asset Database System',
-      th: 'ระบบฐานข้อมูลสินทรัพย์ที่เป็นของรัฐภายใต้ระบบ PSC E-Asset',
+      th: 'ระบบฐานข้อมูลสินทรัพย์ของรัฐ PSC E-Asset',
     },
     description: {
       en: "A database system for managing state-owned assets under the Production Sharing Contract (PSC) E-Asset system for Thailand's Ministry of Energy.",
-      th: 'ระบบฐานข้อมูลสำหรับจัดการสินทรัพย์ที่เป็นของรัฐภายใต้ระบบสัญญาแบ่งปันผลผลิต (PSC E-Asset) ของกระทรวงพลังงาน ประเทศไทย',
+      th: 'ระบบฐานข้อมูลของกระทรวงพลังงาน ประเทศไทย ใช้จัดการสินทรัพย์ของรัฐภายใต้สัญญาแบ่งปันผลผลิต (PSC E-Asset)',
     },
     tech: ['PSC E-Asset', 'Asset Management', 'Database System'],
     logo: '/assets/Seal_of_the_Ministry_of_Energy_of_Thailand.svg.webp',
@@ -236,18 +236,18 @@ export const experience: Experience[] = [
     period: { en: '2021 — Present', th: '2021 — ปัจจุบัน' },
     description: {
       en: 'Working as a full-stack programmer at 1008bit Co., Ltd.',
-      th: 'ทำงานในตำแหน่งโปรแกรมเมอร์ฟูลสแตกที่บริษัท 1008บิท จำกัด',
+      th: 'ทำงานเป็นโปรแกรมเมอร์ฟูลสแตกที่บริษัท 1008บิท จำกัด',
     },
     highlights: [],
   },
   {
-    role: { en: 'Software Development Intern', th: 'นักศึกษาฝึกงานด้านการพัฒนาซอฟต์แวร์' },
+    role: { en: 'Software Development Intern', th: 'นักศึกษาฝึกงานพัฒนาซอฟต์แวร์' },
     company: { en: '4X-Treme', th: '4X-Treme' },
     companyUrl: 'https://www.4x-treme.com/',
     period: { en: '2021', th: '2021' },
     description: {
       en: 'Developed web applications using Entity Framework.',
-      th: 'รับผิดชอบการพัฒนาเว็บแอปพลิเคชันโดยใช้ Entity Framework',
+      th: 'พัฒนาเว็บแอปโดยใช้ Entity Framework',
     },
     highlights: [],
   },
