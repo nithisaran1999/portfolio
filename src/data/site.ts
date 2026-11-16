@@ -165,6 +165,21 @@ export const skills: SkillGroup[] = [
 
 export const projects: Project[] = [
   {
+    title: {
+      en: 'Truck Weight Monitoring System — Vehicle Weight Control Office',
+      th: 'ระบบตรวจสอบน้ำหนักรถบรรทุก สำนักงานควบคุมน้ำหนักยานพาหนะ',
+    },
+    description: {
+      en: 'A Leaflet map dashboard for monitoring truck weighing checkpoints and alerting staff when an overweight or blacklisted vehicle is detected.',
+      th: 'แดชบอร์ดแผนที่ Leaflet สำหรับติดตามจุดตรวจน้ำหนักรถบรรทุก พร้อมแจ้งเตือนเจ้าหน้าที่เมื่อพบรถน้ำหนักเกินหรือรถที่ติดบัญชีดำ',
+    },
+    tech: ['Leaflet', 'Map Dashboard', 'Vehicle Monitoring', 'Alert System'],
+    logo: '/assets/highhway.png',
+    featured: true,
+    tag: 'VEHICLE WEIGHT CONTROL',
+    icon: 'compass',
+  },
+  {
     title: { en: 'Diabetes Patient Appointment & Syringe Management', th: 'ระบบนัดหมายและรับ–คืนเข็มสำหรับผู้ป่วยเบาหวาน' },
     description: {
       en: 'A web application developed during an internship at 4X-Treme to manage appointments for diabetes patients and track syringe collection and returns.',
