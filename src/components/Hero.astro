@@ -143,102 +143,15 @@ const cyclingTags =
         </div>
       </div>
 
-      <!-- Main IDE / Terminal Card -->
-      <div
+      <img
         data-tilt
-        class="spotlight-card rounded-3xl border border-slate-800/80 bg-[#0b101e]/95 text-slate-200 shadow-2xl shadow-indigo-950/40 backdrop-blur-xl"
-      >
-        <!-- Window Top Bar -->
-        <div class="flex items-center justify-between border-b border-slate-800/80 bg-slate-900/70 px-5 py-3.5">
-          <div class="flex items-center gap-2">
-            <span class="h-3 w-3 rounded-full bg-rose-500/85"></span>
-            <span class="h-3 w-3 rounded-full bg-amber-400/85"></span>
-            <span class="h-3 w-3 rounded-full bg-emerald-500/85"></span>
-          </div>
-          <div class="flex items-center gap-2 rounded-lg bg-slate-800/80 px-3 py-1 font-mono text-xs text-slate-300">
-            <Icon name="terminal" class="h-3.5 w-3.5 text-indigo-400" />
-            <span>ai-workflow.ts</span>
-          </div>
-          <span class="rounded-full bg-emerald-500/15 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-emerald-400 ring-1 ring-emerald-500/30">
-            ACTIVE
-          </span>
-        </div>
-
-        <!-- Code & Agent Simulation Content -->
-        <div class="space-y-4 p-6 font-mono text-xs leading-relaxed sm:text-[13px]">
-          <div class="flex items-start gap-3">
-            <span class="select-none text-slate-600">01</span>
-            <div>
-              <span class="text-violet-400">const</span>{' '}
-              <span class="text-cyan-300">developer</span> ={' '}
-              <span class="text-indigo-300">createEngineer</span>(&#123;
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3">
-            <span class="select-none text-slate-600">02</span>
-            <div class="pl-4">
-              name: <span class="text-emerald-300">'{site.name}'</span>,
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3">
-            <span class="select-none text-slate-600">03</span>
-            <div class="pl-4">
-              focus: <span class="text-amber-300">['Full-Stack', 'AI Workflows', 'UX']</span>,
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3">
-            <span class="select-none text-slate-600">04</span>
-            <div class="pl-4">
-              mindset: <span class="text-emerald-300">'Pragmatic & High-Impact'</span>,
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3">
-            <span class="select-none text-slate-600">05</span>
-            <div>&#125;);</div>
-          </div>
-
-          <!-- Interactive Agent Pipeline Steps -->
-          <div class="mt-4 rounded-2xl border border-slate-800 bg-slate-900/90 p-4">
-            <div class="mb-2.5 flex items-center justify-between text-[11px] text-slate-400">
-              <span class="flex items-center gap-1.5 font-semibold text-indigo-300">
-                <Icon name="cpu" class="h-3.5 w-3.5" />
-                {lang === 'th' ? 'ขั้นตอนการทำงานที่มี AI ช่วย' : 'AI-Assisted Pipeline'}
-              </span>
-              <span class="text-emerald-400">100% Ready</span>
-            </div>
-
-            <div class="space-y-2 text-xs">
-              <div class="flex items-center justify-between rounded-lg bg-slate-800/60 px-3 py-1.5">
-                <span class="flex items-center gap-2 text-slate-300">
-                  <span class="text-emerald-400">✓</span>
-                  {lang === 'th' ? 'วางโครงสร้างระบบและออกแบบข้อมูล' : 'System Architecture & Schema'}
-                </span>
-                <span class="text-[10px] text-slate-400">24ms</span>
-              </div>
-
-              <div class="flex items-center justify-between rounded-lg bg-slate-800/60 px-3 py-1.5">
-                <span class="flex items-center gap-2 text-slate-300">
-                  <span class="text-emerald-400">✓</span>
-                  {lang === 'th' ? 'เขียนโค้ดให้อ่านง่ายและเช็กชนิดข้อมูล' : 'Type-Safe Implementation'}
-                </span>
-                <span class="text-[10px] text-slate-400">68ms</span>
-              </div>
-
-              <div class="flex items-center justify-between rounded-lg border border-indigo-500/30 bg-indigo-500/10 px-3 py-1.5">
-                <span class="flex items-center gap-2 text-indigo-200">
-                  <span class="h-2 w-2 animate-ping rounded-full bg-indigo-400"></span>
-                  {lang === 'th' ? 'พร้อมช่วยให้โปรเจกต์ของคุณเป็นรูปเป็นร่าง' : 'Ready to ship business value'}
-                </span>
-                <span class="font-semibold text-indigo-300">SHIP 🚀</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        src="/assets/cat.jpg"
+        alt={lang === 'th' ? 'แมวกำลังมองจอแล็ปท็อป' : 'A cat looking at a laptop'}
+        width="725"
+        height="408"
+        fetchpriority="high"
+        class="spotlight-card w-full rounded-3xl border border-line object-cover shadow-2xl shadow-indigo-950/40"
+      />
 
       <!-- Floating Badge Bottom Left -->
       <div class="absolute -bottom-5 left-4 z-20 hidden items-center gap-2.5 rounded-2xl border border-line bg-surface-2/95 px-4 py-2.5 shadow-xl backdrop-blur-md sm:flex animate-float-slow">
