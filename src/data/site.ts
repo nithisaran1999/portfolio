@@ -18,6 +18,7 @@ export type Project = {
   title: BilingualText;
   description: BilingualText;
   tech: string[];
+  logo?: string;
   liveUrl?: string;
   sourceUrl?: string;
   featured?: boolean;
@@ -181,6 +182,7 @@ export const projects: Project[] = [
       th: 'โปรแกรมสำหรับพนักงานหน้าตู้ใช้จัดเก็บค่าผ่านทางจากรถที่สัญจรบนทางด่วนดอนเมืองโทลล์เวย์',
     },
     tech: ['Toll Collection', 'Desktop Application'],
+    logo: '/assets/DMT.png',
     featured: true,
     tag: 'TOLL COLLECTION SYSTEM',
     icon: 'cpu',
@@ -195,6 +197,7 @@ export const projects: Project[] = [
       th: 'ระบบรายงานและติดตามข้อมูลสภาพอากาศสนามบินของกองข่าวอากาศ กองทัพอากาศ สำหรับรวบรวมและรายงานข้อมูลอุตุนิยมวิทยาการบิน ข้อมูลสภาพอากาศประจำสถานี เพื่อสนับสนุนความปลอดภัยในการปฏิบัติภารกิจการบิน',
     },
     tech: ['Aviation Weather', 'Meteorological System', 'Web Application'],
+    logo: '/assets/rtaf.png',
     featured: true,
     tag: 'RTAF · AVIATION WEATHER',
     icon: 'cloud',
@@ -206,31 +209,23 @@ export const projects: Project[] = [
       th: 'ระบบเอกสารการเงินภายใน PTTEP',
     },
     tech: ['Document Management', 'Finance', 'Internal System'],
+    logo: '/assets/PTTEP_Logo.svg.webp',
     tag: 'DOCUMENT MANAGEMENT',
     icon: 'shield-check',
   },
   {
-    title: { en: 'Project Three', th: 'โปรเจกต์ 3' },
-    description: {
-      en: 'An open-source CLI tool and library that automates repetitive developer workflows, published to npm with full test coverage.',
-      th: 'เครื่องมือ CLI และไลบรารีแบบโอเพนซอร์สที่ช่วยอัตโนมัติเวิร์กโฟลว์ซ้ำซ้อนของนักพัฒนา เผยแพร่บน npm พร้อมชุดทดสอบครบถ้วน',
+    title: {
+      en: 'PSC E-Asset State Asset Database System',
+      th: 'ระบบฐานข้อมูลสินทรัพย์ที่เป็นของรัฐภายใต้ระบบ PSC E-Asset',
     },
-    tech: ['TypeScript', 'Node.js', 'Vitest'],
-    sourceUrl: 'https://github.com/yourname/project-three',
-    tag: 'DEVELOPER TOOLING',
-    icon: 'terminal',
-  },
-  {
-    title: { en: 'Project Four', th: 'โปรเจกต์ 4' },
     description: {
-      en: 'A data dashboard that turns raw metrics into clear, interactive visualizations with an accessible, responsive interface.',
-      th: 'แดชบอร์ดข้อมูลที่แปลงเมตริกดิบให้เป็นภาพแสดงผลที่ชัดเจนและโต้ตอบได้ พร้อมอินเทอร์เฟซที่เข้าถึงได้และรองรับทุกขนาดหน้าจอ',
+      en: "A database system for managing state-owned assets under the Production Sharing Contract (PSC) E-Asset system for Thailand's Ministry of Energy.",
+      th: 'ระบบฐานข้อมูลสำหรับจัดการสินทรัพย์ที่เป็นของรัฐภายใต้ระบบสัญญาแบ่งปันผลผลิต (PSC E-Asset) ของกระทรวงพลังงาน ประเทศไทย',
     },
-    tech: ['React', 'D3.js', 'Tailwind CSS'],
-    liveUrl: '#',
-    sourceUrl: 'https://github.com/yourname/project-four',
-    tag: 'DATA VISUALIZATION',
-    icon: 'compass',
+    tech: ['PSC E-Asset', 'Asset Management', 'Database System'],
+    logo: '/assets/Seal_of_the_Ministry_of_Energy_of_Thailand.svg.webp',
+    tag: 'ENERGY · STATE ASSET MANAGEMENT',
+    icon: 'layers',
   },
 ];
 

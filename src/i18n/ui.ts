@@ -20,7 +20,7 @@ export const ui = {
       toggle: 'Toggle theme',
     },
     hero: {
-      badge: 'Available for new opportunities',
+      badge: "I'm hired",
       greeting: "Hi, I'm",
       viewWork: 'View my work',
       getInTouch: 'Get in touch',
@@ -90,7 +90,7 @@ export const ui = {
       toggle: 'สลับธีม',
     },
     hero: {
-      badge: 'เปิดรับโอกาสใหม่',
+      badge: 'ได้งานแล้ว',
       greeting: 'สวัสดี ฉันคือ',
       viewWork: 'ดูผลงานของฉัน',
       getInTouch: 'ติดต่อฉัน',
