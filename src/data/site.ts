@@ -53,12 +53,12 @@ export type ValuePoint = {
 export const site = {
   name: 'Nithisaran',
   role: {
-    en: 'AI-Driven Software Developer',
-    th: 'นักพัฒนาซอฟต์แวร์ที่ใช้ AI ช่วยทำงาน',
+    en: 'Software Developer & AI Integration Specialist',
+    th: 'นักพัฒนาซอฟต์แวร์และผู้เชี่ยวชาญด้านการประยุกต์ใช้ AI',
   },
   tagline: {
-    en: 'I understand your business and apply AI to build practical solutions that create real value.',
-    th: 'ผมเริ่มจากทำความเข้าใจธุรกิจและปัญหาที่คุณเจอ แล้วเลือกใช้เทคโนโลยี รวมถึง AI ให้เหมาะกับงาน',
+    en: 'I specialize in applying AI to real-world work—choosing the right tools to solve business problems and improve how work gets done.',
+    th: 'ผมเชี่ยวชาญการเลือกและนำ AI มาประยุกต์ใช้กับงานจริงให้เหมาะกับโจทย์ เพื่อแก้ปัญหาและเพิ่มประสิทธิภาพการทำงาน',
   },
   location: {
     en: 'Thailand',
@@ -73,8 +73,8 @@ export const site = {
 
 export const aboutMe = {
   description: {
-    en: 'A modern software developer focused on seamlessly blending Software Engineering with AI Workflows. I believe in leveraging AI to accelerate development (fast iteration) — from problem-solving and system design to code refactoring — to deliver high-quality work and create business value quickly and precisely.',
-    th: 'ผมเป็นนักพัฒนาซอฟต์แวร์ที่ใช้ AI ช่วยทำงาน ตั้งแต่คิดวิธีแก้ปัญหา ออกแบบระบบ ไปจนถึงปรับปรุงโค้ด ผมชอบหาวิธีทำงานให้คล่องขึ้น โดยยังใส่ใจคุณภาพโค้ดและสิ่งที่คนใช้งานต้องการ',
+    en: 'I am a software developer specializing in practical AI integration. I select and apply AI tools across problem-solving, system design, and development workflows to improve efficiency while maintaining quality and focusing on real user needs.',
+    th: 'ผมเป็นนักพัฒนาซอฟต์แวร์ที่เชี่ยวชาญการนำ AI มาปรับใช้กับงานจริง ตั้งแต่ช่วยคิดวิธีแก้ปัญหา ออกแบบระบบ ไปจนถึงพัฒนาซอฟต์แวร์ โดยเลือกใช้ให้เหมาะกับโจทย์ เพื่อเพิ่มประสิทธิภาพโดยยังใส่ใจคุณภาพและความต้องการของผู้ใช้',
   },
 };
 
@@ -82,7 +82,7 @@ export const workApproach: WorkApproach[] = [
   {
     title: {
       en: 'AI-First & Efficiency Mindset',
-      th: 'ใช้ AI ช่วยในงานพัฒนา',
+      th: 'เชี่ยวชาญการประยุกต์ใช้ AI กับงาน',
     },
     body: {
       en: 'I treat AI as a working partner — using it to handle repetitive tasks (boilerplate) and accelerate solution discovery, so I can focus fully on core logic, architecture design, and the user experience (UX).',

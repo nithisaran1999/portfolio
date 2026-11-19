@@ -36,7 +36,7 @@ export const ui = {
       location: 'Location',
       focus: 'Focus',
       experience: 'Experience',
-      focusValue: 'AI-Driven Development',
+      focusValue: 'Practical AI Integration',
       experienceValue: '5+ years',
     },
     howIWork: {
@@ -115,7 +115,7 @@ export const ui = {
       location: 'ที่อยู่',
       focus: 'ความเชี่ยวชาญ',
       experience: 'ประสบการณ์',
-      focusValue: 'ใช้ AI ช่วยเขียนโค้ด',
+      focusValue: 'ประยุกต์ใช้ AI กับงานจริง',
       experienceValue: '5+ ปี',
     },
     howIWork: {
